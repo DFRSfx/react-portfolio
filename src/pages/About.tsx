@@ -1,6 +1,6 @@
 import styles from "./About.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 export const About = () => {
