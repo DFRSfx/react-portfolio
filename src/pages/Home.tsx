@@ -1,7 +1,6 @@
 import styles from "./Home.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
