@@ -142,6 +142,7 @@
     padding: 4px 0px;
     text-decoration: none;
     font-family: Marcellus;
+    cursor: pointer;
 }
 
 .theMenu .menuItem > a:hover {
@@ -165,4 +166,9 @@
     color: var(--text-color-2);
     margin-right: 10px;
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
+}
+
+.menuFooter a:hover {
+    color: var(--text-color-3);
 }

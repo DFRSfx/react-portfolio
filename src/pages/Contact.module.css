@@ -12,6 +12,10 @@
     height: calc(2.5em + .75rem + 2px);
 }
 
+.contactForm {
+    padding-bottom: 5rem;
+}
+
 .acBtn:hover {
     color: var(--secondary-color);
 }

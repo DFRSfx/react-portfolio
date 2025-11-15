@@ -18,8 +18,8 @@ interface FormData {
 export const ContactUs = () => {
   const { t } = useTranslation();
   const contactConfig = {
-    YOUR_EMAIL: "dario.soares@email.com",
-    YOUR_FONE: "+351 123 456 789",
+    YOUR_EMAIL: "dariofrsoares@icloud.com",
+    YOUR_FONE: "+351 919792186",
     YOUR_SERVICE_ID: "service_id",
     YOUR_TEMPLATE_ID: "template_id",
     YOUR_USER_ID: "user_id",

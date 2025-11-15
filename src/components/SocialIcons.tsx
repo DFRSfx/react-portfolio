@@ -30,7 +30,7 @@ export const SocialIcons = () => {
   const socialprofils = {
     github: "https://github.com/dariosoares",
     linkedin: "https://linkedin.com/in/dariosoares",
-    twitter: "https://twitter.com/dariosoares",
+    instagram: "https://instagram.com/dariosoares",
   };
 
   return (

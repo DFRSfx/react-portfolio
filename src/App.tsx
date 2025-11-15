@@ -1,26 +1,31 @@
-import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter as Router,
-  useLocation,
-} from "react-router-dom";
-import AppRoutes from "./Routes";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Portfolio } from "./pages/Portfolio";
+import { ContactUs } from "./pages/Contact";
+import { SocialIcons } from "./components/SocialIcons";
 
 export default function App() {
   return (
     <Router>
-      <ScrollToTop />
       <Header />
-      <AppRoutes />
+      <div className="s_c">
+        <section id="home">
+          <Home />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="portfolio">
+          <Portfolio />
+        </section>
+        <section id="contact">
+          <ContactUs />
+        </section>
+        <SocialIcons />
+      </div>
     </Router>
   );
 }

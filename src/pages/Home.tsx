@@ -40,22 +40,28 @@ export const Home = () => {
                 </h1>
                 <p className="mb-1x">{t('home.description')}</p>
                 <div className="intro_btn-action pb-5">
-                  <Link to="/portfolio" className="text_2">
+                  <a onClick={() => {
+                    const element = document.getElementById('portfolio');
+                    if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }} className="text_2" style={{ cursor: 'pointer' }}>
                     <div id="button_p" className={`${styles.acBtn} ${styles.buttonP} btn`}>
                       {t('home.portfolioButton')}
                       <div className={`${styles.ring} ${styles.one}`}></div>
                       <div className={`${styles.ring} ${styles.two}`}></div>
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
-                  </Link>
-                  <Link to="/contact">
+                  </a>
+                  <a onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }} style={{ cursor: 'pointer' }}>
                     <div id="button_h" className={`${styles.acBtn} ${styles.buttonH} btn`}>
                       {t('home.contactButton')}
                       <div className={`${styles.ring} ${styles.one}`}></div>
                       <div className={`${styles.ring} ${styles.two}`}></div>
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

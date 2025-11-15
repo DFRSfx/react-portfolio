@@ -131,6 +131,26 @@ section {
     color: var(--primary-color);
 }
 
+[data-theme="light"] .buttonP {
+    color: #fff;
+}
+
+[data-theme="dark"] .buttonP {
+    color: #000;
+}
+
+.buttonP:hover {
+    color: var(--secondary-color);
+}
+
+[data-theme="light"] .buttonP:hover {
+    color: #fff;
+}
+
+[data-theme="dark"] .buttonP:hover {
+    color: #000;
+}
+
 .buttonH:hover {
     color: var(--primary-color)
 }
