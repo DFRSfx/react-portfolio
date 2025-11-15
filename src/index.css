@@ -1,0 +1,305 @@
+:root,
+[data-theme="dark"] {
+    --bg-color: #0c0c0c;
+    --primary-color: #0d0d0d;
+    --secondary-color: #fff;
+    --text-color: #fff;
+    --text-color-2: #fff;
+    --text-color-3: rgb(204, 0, 0);
+    --overlay-color: rgb(12 12 12 / 63%);
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --primary-color: #ffffff;
+    --secondary-color: #000;
+    --text-color: #000;
+    --text-color-2: #000;
+    --text-color-3: rgb(204, 0, 0);
+    --overlay-color: rgb(255 255 255 / 70%);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 60px;
+    border-left: 10px solid var(--primary-color);
+    border-right: 10px solid var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Marcellus;
+}
+
+a,
+a:hover {
+    color: var(--text-color);
+}
+
+p {
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.ovhidden {
+    overflow: hidden;
+}
+
+.text_2,
+.text_2:hover {
+    color: var(--text-color-2);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.color_pr {
+    color: var(--primary-color) !important;
+}
+
+.color_sec {
+    color: var(--secondary-color);
+}
+
+.nav_ac {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav_ac svg {
+    font-size: 2em;
+    color: var(--text-color-2);
+}
+
+.nav_ac:hover svg {
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    padding: 5px 15px;
+    margin: 0;
+    margin-right: -2px;
+    border: unset;
+    background: var(--primary-color);
+    font-size: 1.25rem;
+    font-family: Marcellus;
+    color: var(--text-color-2);
+    line-height: 2;
+    height: 50px;
+    font-weight: bold;
+    z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle svg {
+    width: 2em;
+    height: 2em;
+    color: var(--text-color-2);
+    transition: opacity 0.3s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+}
+
+/* Language Selector */
+.language-selector {
+    position: relative;
+    display: inline-flex;
+    z-index: 1000;
+}
+
+.language-button {
+    padding: 5px 20px;
+    margin: 0;
+    margin-right: -2px;
+    border: unset;
+    background: var(--primary-color);
+    font-size: 1rem;
+    font-family: Marcellus;
+    color: var(--text-color-2);
+    line-height: 2;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    min-width: 140px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.language-button:hover {
+    opacity: 0.8;
+}
+
+.language-button * {
+    pointer-events: none;
+}
+
+.language-button .lang-flag {
+    font-size: 1.3em;
+}
+
+.language-button .lang-label {
+    font-size: 0.95em;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary-color);
+    border: none;
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color-2);
+    font-family: Marcellus;
+    font-size: 0.95rem;
+    text-align: left;
+    position: relative;
+    letter-spacing: 0.3px;
+}
+
+.language-option:first-child {
+    padding-top: 16px;
+}
+
+.language-option:last-child {
+    border-bottom: none;
+    padding-bottom: 16px;
+}
+
+.language-option::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--text-color-2);
+    transform: scaleY(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.12);
+    padding-left: 24px;
+}
+
+.language-option:hover::before {
+    transform: scaleY(1);
+}
+
+.language-option.active {
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+    padding-left: 24px;
+}
+
+.language-option.active::before {
+    transform: scaleY(1);
+}
+
+.language-option .lang-flag {
+    font-size: 1.4em;
+    line-height: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.language-option .lang-label {
+    flex: 1;
+    font-size: 0.95em;
+    pointer-events: none;
+    font-weight: 500;
+}
+
+/* Header Actions - Agrupa os botões */
+.header-actions {
+    gap: 0 !important;
+    border-radius: 0;
+}
+
+.header-actions > * {
+    margin: 0;
+}
+
+.header-actions .language-button,
+.header-actions .theme-toggle {
+    border-radius: 0;
+}
+
+.header-actions > *:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.header-actions > *:last-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}

@@ -1,0 +1,119 @@
+{
+  "header": {
+    "home": "Inicio",
+    "portfolio": "Portafolio",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "Hola, soy Dário Soares",
+    "title1": "Desarrollador Full Stack",
+    "title2": "React & TypeScript",
+    "title3": "Desarrollo Web Moderno",
+    "description": "Desarrollador apasionado por crear experiencias web increíbles y funcionales utilizando las tecnologías más modernas del mercado.",
+    "portfolioButton": "Mi Portafolio",
+    "contactButton": "Contacto",
+    "meta": {
+      "title": "Dário Soares - Desarrollador Full Stack",
+      "description": "Dário Soares - Desarrollador Full Stack especializado en React, TypeScript y desarrollo web moderno"
+    }
+  },
+  "about": {
+    "pageTitle": "Sobre mí",
+    "sectionTitle": "Un poco sobre mí",
+    "description": "Desarrollador Full Stack con pasión por crear soluciones web modernas y eficientes. Especializado en React, TypeScript, Node.js y tecnologías modernas de desarrollo. Enfocado en escribir código limpio, eficiente y escalable.",
+    "experienceTitle": "Experiencia",
+    "skillsTitle": "Habilidades",
+    "servicesTitle": "Servicios",
+    "meta": {
+      "title": "Sobre mí | Dário Soares",
+      "description": "Dário Soares - Desarrollador Full Stack especializado en React, TypeScript y desarrollo web moderno"
+    },
+    "workTimeline": {
+      "job1": {
+        "title": "Desarrollador Full Stack",
+        "company": "Freelancer",
+        "date": "2023 - Presente"
+      },
+      "job2": {
+        "title": "Desarrollador Frontend",
+        "company": "Proyectos Personales",
+        "date": "2022 - 2023"
+      },
+      "job3": {
+        "title": "Desarrollador Web",
+        "company": "Estudios y Formación",
+        "date": "2021 - 2022"
+      }
+    },
+    "services": {
+      "service1": {
+        "title": "Desarrollo Web",
+        "description": "Creación de sitios web y aplicaciones web modernas, responsivas y optimizadas para el rendimiento utilizando React, TypeScript y las mejores prácticas del mercado."
+      },
+      "service2": {
+        "title": "Desarrollo Frontend",
+        "description": "Desarrollo de interfaces de usuario intuitivas y atractivas, con enfoque en la experiencia del usuario y diseño responsivo para todos los dispositivos."
+      },
+      "service3": {
+        "title": "Consultoría Técnica",
+        "description": "Asesoría en arquitectura de software, elección de tecnologías y buenas prácticas de desarrollo para proyectos web de cualquier escala."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "sectionTitle": "Ponte en contacto",
+    "description": "Estoy disponible para nuevos proyectos y colaboraciones. Contáctame a través del formulario a continuación o por mis canales de redes sociales.",
+    "email": "Correo electrónico:",
+    "phone": "Teléfono:",
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Correo electrónico",
+    "messagePlaceholder": "Mensaje",
+    "sendButton": "Enviar",
+    "sendingButton": "Enviando...",
+    "successMessage": "¡Mensaje enviado con éxito! Gracias por contactarme.",
+    "errorMessage": "Error al enviar el mensaje:",
+    "meta": {
+      "title": "Contacto | Dário Soares",
+      "description": "Ponte en contacto con Dário Soares para proyectos y colaboraciones"
+    }
+  },
+  "portfolio": {
+    "subtitle": "Trabajos Recientes",
+    "pageTitle": "Portafolio",
+    "description": "Estos proyectos demuestran mi experiencia con ejemplos prácticos de mi trabajo. Cada proyecto incluye una breve descripción y enlaces a repositorios de código y demos en vivo.",
+    "viewCode": "Ver código",
+    "viewDemo": "Ver demo",
+    "meta": {
+      "title": "Portafolio | Dário Soares",
+      "description": "Proyectos y trabajos desarrollados por Dário Soares - Desarrollador Full Stack"
+    },
+    "projects": {
+      "project1": {
+        "title": "Dashboard Analytics",
+        "description": "Aplicación web para visualización de datos en tiempo real con gráficos interactivos e informes personalizados."
+      },
+      "project2": {
+        "title": "Plataforma E-commerce",
+        "description": "Plataforma completa de ventas en línea con carrito, pagos y gestión de productos."
+      },
+      "project3": {
+        "title": "Task Manager Pro",
+        "description": "Sistema de gestión de tareas y productividad con colaboración en equipo y líneas de tiempo."
+      },
+      "project4": {
+        "title": "Aplicación de Redes Sociales",
+        "description": "Red social con feed, publicaciones, comentarios y sistema de likes en tiempo real."
+      },
+      "project5": {
+        "title": "Sistema CRM",
+        "description": "Sistema de gestión de relaciones con clientes, pipeline de ventas y automatización."
+      },
+      "project6": {
+        "title": "Plataforma de Blog",
+        "description": "Plataforma de blog con editor WYSIWYG, gestión de contenido y SEO optimizado."
+      }
+    }
+  }
+}

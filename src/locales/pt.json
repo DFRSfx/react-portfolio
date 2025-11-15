@@ -1,0 +1,119 @@
+{
+  "header": {
+    "home": "Início",
+    "portfolio": "Portfólio",
+    "about": "Sobre",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "Olá, sou o Dário Soares",
+    "title1": "Full Stack Developer",
+    "title2": "React & TypeScript",
+    "title3": "Desenvolvimento Web Moderno",
+    "description": "Desenvolvedor apaixonado por criar experiências web incríveis e funcionais usando as tecnologias mais modernas do mercado.",
+    "portfolioButton": "Meu Portfólio",
+    "contactButton": "Contacto",
+    "meta": {
+      "title": "Dário Soares - Full Stack Developer",
+      "description": "Dário Soares - Full Stack Developer especializado em React, TypeScript e desenvolvimento web moderno"
+    }
+  },
+  "about": {
+    "pageTitle": "Sobre mim",
+    "sectionTitle": "Um pouco sobre mim",
+    "description": "Desenvolvedor Full Stack com paixão por criar soluções web modernas e eficientes. Especializado em React, TypeScript, Node.js e tecnologias modernas de desenvolvimento. Focado em escrever código limpo, performático e escalável.",
+    "experienceTitle": "Experiência",
+    "skillsTitle": "Competências",
+    "servicesTitle": "Serviços",
+    "meta": {
+      "title": "Sobre | Dário Soares",
+      "description": "Dário Soares - Full Stack Developer especializado em React, TypeScript e desenvolvimento web moderno"
+    },
+    "workTimeline": {
+      "job1": {
+        "title": "Full Stack Developer",
+        "company": "Freelancer",
+        "date": "2023 - Presente"
+      },
+      "job2": {
+        "title": "Frontend Developer",
+        "company": "Projetos Pessoais",
+        "date": "2022 - 2023"
+      },
+      "job3": {
+        "title": "Web Developer",
+        "company": "Estudos & Formação",
+        "date": "2021 - 2022"
+      }
+    },
+    "services": {
+      "service1": {
+        "title": "Desenvolvimento Web",
+        "description": "Criação de websites e aplicações web modernas, responsivas e otimizadas para performance usando React, TypeScript e as melhores práticas do mercado."
+      },
+      "service2": {
+        "title": "Frontend Development",
+        "description": "Desenvolvimento de interfaces de usuário intuitivas e atraentes, com foco em experiência do usuário e design responsivo para todos os dispositivos."
+      },
+      "service3": {
+        "title": "Consultoria Técnica",
+        "description": "Assessoria em arquitetura de software, escolha de tecnologias e boas práticas de desenvolvimento para projetos web de qualquer escala."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contacto",
+    "sectionTitle": "Entre em contacto",
+    "description": "Estou disponível para novos projetos e colaborações. Entre em contato comigo através do formulário abaixo ou pelos meus canais de redes sociais.",
+    "email": "Email:",
+    "phone": "Telefone:",
+    "namePlaceholder": "Nome",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Mensagem",
+    "sendButton": "Enviar",
+    "sendingButton": "Enviando...",
+    "successMessage": "Mensagem enviada com sucesso! Obrigado pelo contacto.",
+    "errorMessage": "Erro ao enviar mensagem:",
+    "meta": {
+      "title": "Contacto | Dário Soares",
+      "description": "Entre em contacto com Dário Soares para projetos e colaborações"
+    }
+  },
+  "portfolio": {
+    "subtitle": "Trabalhos Recentes",
+    "pageTitle": "Portfólio",
+    "description": "Estes projetos demonstram a minha experiência com exemplos práticos do meu trabalho. Cada projeto inclui uma breve descrição e links para repositórios de código e demos ao vivo.",
+    "viewCode": "Ver código",
+    "viewDemo": "Ver demo",
+    "meta": {
+      "title": "Portfólio | Dário Soares",
+      "description": "Projetos e trabalhos desenvolvidos por Dário Soares - Full Stack Developer"
+    },
+    "projects": {
+      "project1": {
+        "title": "Dashboard Analytics",
+        "description": "Aplicação web para visualização de dados em tempo real com gráficos interativos e relatórios personalizados."
+      },
+      "project2": {
+        "title": "E-commerce Platform",
+        "description": "Plataforma completa de vendas online com carrinho, pagamentos e gestão de produtos."
+      },
+      "project3": {
+        "title": "Task Manager Pro",
+        "description": "Sistema de gestão de tarefas e produtividade com colaboração em equipe e timelines."
+      },
+      "project4": {
+        "title": "Social Media App",
+        "description": "Rede social com feed, posts, comentários e sistema de likes em tempo real."
+      },
+      "project5": {
+        "title": "CRM System",
+        "description": "Sistema de gestão de relacionamento com clientes, pipeline de vendas e automação."
+      },
+      "project6": {
+        "title": "Blog Platform",
+        "description": "Plataforma de blog com editor WYSIWYG, gestão de conteúdo e SEO otimizado."
+      }
+    }
+  }
+}

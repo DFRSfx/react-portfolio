@@ -1,0 +1,119 @@
+{
+  "header": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hello, I'm Dário Soares",
+    "title1": "Full Stack Developer",
+    "title2": "React & TypeScript",
+    "title3": "Modern Web Development",
+    "description": "Developer passionate about creating amazing and functional web experiences using the most modern technologies on the market.",
+    "portfolioButton": "My Portfolio",
+    "contactButton": "Contact",
+    "meta": {
+      "title": "Dário Soares - Full Stack Developer",
+      "description": "Dário Soares - Full Stack Developer specialized in React, TypeScript and modern web development"
+    }
+  },
+  "about": {
+    "pageTitle": "About me",
+    "sectionTitle": "A little about me",
+    "description": "Full Stack Developer with a passion for creating modern and efficient web solutions. Specialized in React, TypeScript, Node.js and modern development technologies. Focused on writing clean, performant and scalable code.",
+    "experienceTitle": "Experience",
+    "skillsTitle": "Skills",
+    "servicesTitle": "Services",
+    "meta": {
+      "title": "About | Dário Soares",
+      "description": "Dário Soares - Full Stack Developer specialized in React, TypeScript and modern web development"
+    },
+    "workTimeline": {
+      "job1": {
+        "title": "Full Stack Developer",
+        "company": "Freelancer",
+        "date": "2023 - Present"
+      },
+      "job2": {
+        "title": "Frontend Developer",
+        "company": "Personal Projects",
+        "date": "2022 - 2023"
+      },
+      "job3": {
+        "title": "Web Developer",
+        "company": "Studies & Training",
+        "date": "2021 - 2022"
+      }
+    },
+    "services": {
+      "service1": {
+        "title": "Web Development",
+        "description": "Creation of modern, responsive and performance-optimized websites and web applications using React, TypeScript and market best practices."
+      },
+      "service2": {
+        "title": "Frontend Development",
+        "description": "Development of intuitive and attractive user interfaces, with a focus on user experience and responsive design for all devices."
+      },
+      "service3": {
+        "title": "Technical Consulting",
+        "description": "Advice on software architecture, technology selection and development best practices for web projects of any scale."
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "sectionTitle": "Get in touch",
+    "description": "I am available for new projects and collaborations. Contact me through the form below or through my social media channels.",
+    "email": "Email:",
+    "phone": "Phone:",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "sendButton": "Send",
+    "sendingButton": "Sending...",
+    "successMessage": "Message sent successfully! Thank you for contacting me.",
+    "errorMessage": "Error sending message:",
+    "meta": {
+      "title": "Contact | Dário Soares",
+      "description": "Get in touch with Dário Soares for projects and collaborations"
+    }
+  },
+  "portfolio": {
+    "subtitle": "Recent Work",
+    "pageTitle": "Portfolio",
+    "description": "These projects demonstrate my experience with practical examples of my work. Each project includes a brief description and links to code repositories and live demos.",
+    "viewCode": "View code",
+    "viewDemo": "View demo",
+    "meta": {
+      "title": "Portfolio | Dário Soares",
+      "description": "Projects and works developed by Dário Soares - Full Stack Developer"
+    },
+    "projects": {
+      "project1": {
+        "title": "Dashboard Analytics",
+        "description": "Web application for real-time data visualization with interactive charts and custom reports."
+      },
+      "project2": {
+        "title": "E-commerce Platform",
+        "description": "Complete online sales platform with shopping cart, payments and product management."
+      },
+      "project3": {
+        "title": "Task Manager Pro",
+        "description": "Task management and productivity system with team collaboration and timelines."
+      },
+      "project4": {
+        "title": "Social Media App",
+        "description": "Social network with feed, posts, comments and real-time like system."
+      },
+      "project5": {
+        "title": "CRM System",
+        "description": "Customer relationship management system, sales pipeline and automation."
+      },
+      "project6": {
+        "title": "Blog Platform",
+        "description": "Blog platform with WYSIWYG editor, content management and optimized SEO."
+      }
+    }
+  }
+}

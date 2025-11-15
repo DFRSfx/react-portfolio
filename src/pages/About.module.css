@@ -1,0 +1,200 @@
+/* Container */
+.aboutContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* 1. Abertura */
+.opening {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-family: 'Marcellus', serif;
+}
+
+.role {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Sections */
+.problem,
+.projects,
+.tools,
+.contact {
+    margin-bottom: 4rem;
+}
+
+.sectionTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Marcellus', serif;
+}
+
+/* 2. Problema */
+.problemText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* 3. Projetos */
+.projectCard {
+    background: var(--card-background, rgba(100, 108, 255, 0.03));
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.projectCard:last-child {
+    margin-bottom: 0;
+}
+
+.projectTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Marcellus', serif;
+}
+
+.projectSection {
+    margin-bottom: 1.25rem;
+}
+
+.projectSection:last-child {
+    margin-bottom: 0;
+}
+
+.projectSection strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projectSection p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.result {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* 4. Ferramentas */
+.toolsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tool {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--card-background, rgba(100, 108, 255, 0.1));
+    color: var(--text-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(100, 108, 255, 0.2);
+}
+
+/* 5. Contato */
+.contactInfo {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.contactInfo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.contactInfo a:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .aboutContainer {
+        padding: 2rem 1.5rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .role {
+        font-size: 1.1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .projectCard {
+        padding: 1.5rem;
+    }
+
+    .projectTitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutContainer {
+        padding: 1.5rem 1rem;
+    }
+
+    .name {
+        font-size: 1.75rem;
+    }
+
+    .role {
+        font-size: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.35rem;
+    }
+
+    .projectCard {
+        padding: 1.25rem;
+    }
+
+    .toolsList {
+        gap: 0.5rem;
+    }
+
+    .tool {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.875rem;
+    }
+}
