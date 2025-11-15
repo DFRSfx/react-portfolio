@@ -9,7 +9,7 @@ export const About = () => {
   const tools = [
     "React", "TypeScript", "Express", "Node.js",
     "MySQL", "Laravel", "PUG", "Python", "PHP", "C#", "C++", "REST APIs",
-    "Git", "Docker", "AWS", "Vercel"
+    "Git", "AWS", "Vercel"
   ];
 
   return (
