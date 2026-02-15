@@ -39,13 +39,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Escurece ligeiramente as imagens */
+  /* Gradiente direcionado para a base onde o título rotacionado vive */
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.1) 100%);
   transition: background 0.5s;
 }
 
 .panel.active .panelOverlay {
   /* Gradiente mais forte em baixo para ler a descrição no card aberto */
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.15) 100%);
 }
 
 /* Título Vertical (Visível apenas nos cartões fechados) */
@@ -63,7 +64,7 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.7);
 }
 
 /* Esconde o título vertical quando o cartão abre */
@@ -97,6 +98,7 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .projectDescription {
@@ -104,7 +106,8 @@
   margin-bottom: 20px;
   max-width: 600px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 2px 12px rgba(0,0,0,0.7);
 }
 
 /* Lista de tecnologias */
