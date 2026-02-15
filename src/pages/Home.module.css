@@ -8,16 +8,19 @@ section {
 }
 
 .introSec {
-    height: calc(100vh - 60px);
-    min-height: 700px;
     height: 100vh;
-    margin-top: -60px;
+    min-height: 700px;
+    margin-top: -60px; /* Compensa o header fixo */
+    display: flex;
+    align-items: center;
 }
 
-@media (max-width:991.98px) {
+/* Em mobile, altura automática */
+@media (max-width: 991.98px) {
     .introSec {
         display: block;
-        height: auto!important;
+        height: auto !important;
+        padding-top: 100px; /* Espaço para o header em mobile */
     }
 }
 
@@ -26,7 +29,7 @@ section {
     width: 50%;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .introSec .text,
     .introSec .hBgImage {
         width: 100%;
@@ -34,39 +37,49 @@ section {
 }
 
 .introSec .intro {
-    max-width: 450px;
+    /* CORREÇÃO AQUI: Aumentei de 450px para 700px para caberem os botões */
+    max-width: 700px; 
     margin: 0 auto;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .introSec .intro {
-        max-width: 700px;
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: 100%;
+        padding: 0 20px;
+        text-align: center; /* Centrar texto em mobile fica melhor */
     }
 }
 
 .introSec .text h1 {
     font-size: 30px;
-    margin-bottom: 50px;
-    font-weight: 700;
-}
-
-.introSec .text h3 {
-    font-size: 16px;
+    margin-bottom: 30px;
     font-weight: 700;
 }
 
 .introSec .hBgImage {
     background-size: cover;
     background-position: center;
-    min-height: 700px;
+    min-height: 100vh;
     position: relative;
     filter: saturate(0.5);
 }
 
+/* Wrapper dos Botões */
+.btnWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Força ficar na mesma linha em desktop */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btnWrapper a {
+    text-decoration: none;
+}
+
+/* Estilo Base do Botão */
 .acBtn {
-    padding: 4px 19px;
+    padding: 12px 20px;
     color: var(--secondary-color);
     position: relative;
     border: var(--secondary-color) 2px solid;
@@ -74,91 +87,72 @@ section {
     transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
     cursor: pointer;
     border-radius: 0;
-    margin-right: 20px;
+    
+    /* Layout do conteúdo do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap; /* Impede o texto de quebrar linha */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    flex: 1; /* Faz os botões terem o mesmo tamanho */
 }
 
 .acBtn a {
     text-decoration: none;
+    color: inherit;
 }
 
 .acBtn:hover {
-    box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
-}
-
-.acBtn:hover .one {
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.acBtn:hover .two {
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.acBtn:hover .three {
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.acBtn .ring {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: transparent;
-    top: 0;
-    left: 0;
-    transform: translate3d(0px, 90px, 0px);
-}
-
-.acBtn .one {
-    background-color: #000;
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -4;
-}
-
-.acBtn .two {
-    background-color: var(--primary-color);
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -3;
-}
-
-.acBtn .three {
-    background-color: var(--secondary-color);
-    z-index: -2;
-    transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-.buttonP {
-    background: var(--secondary-color);
+    box-shadow: 6px 6px 0px var(--text-color), -6px -6px 0px var(--text-color);
     color: var(--primary-color);
 }
 
-[data-theme="light"] .buttonP {
-    color: #fff;
+/* Animações dos anéis (mantidas) */
+.acBtn:hover .one { opacity: 1; transform: translate3d(0px, 0px, 0px); }
+.acBtn:hover .two { transform: translate3d(0px, 0px, 0px); }
+.acBtn:hover .three { transform: translate3d(0px, 0px, 0px); }
+
+.acBtn .ring {
+    width: 100%; height: 100%; position: absolute; background: transparent;
+    top: 0; left: 0; transform: translate3d(0px, 90px, 0px);
 }
 
-[data-theme="dark"] .buttonP {
-    color: #000;
-}
+.acBtn .one { background-color: #000; transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1); z-index: -4; }
+.acBtn .two { background-color: var(--primary-color); transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); z-index: -3; }
+.acBtn .three { background-color: var(--secondary-color); z-index: -2; transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1); }
 
-.buttonP:hover {
-    color: var(--secondary-color);
-}
+/* Cores específicas */
+.buttonP { background: var(--secondary-color); color: var(--primary-color); }
+[data-theme="light"] .buttonP { color: #fff; }
+[data-theme="dark"] .buttonP { color: #000; }
+.buttonP:hover { color: var(--primary-color); }
 
-[data-theme="light"] .buttonP:hover {
-    color: #fff;
-}
-
-[data-theme="dark"] .buttonP:hover {
-    color: #000;
-}
-
-.buttonH:hover {
-    color: var(--primary-color)
-}
-
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .introSec .hBgImage {
-        height: 600px;
-        min-height: 75vh;
+        height: 50vh;
+        min-height: 400px;
         margin-bottom: 30px;
+    }
+}
+
+/* --- MOBILE LAYOUT --- */
+@media (max-width: 768px) {
+    .btnWrapper {
+        flex-direction: column; /* Empilha verticalmente */
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .acBtn {
+        width: 100%; /* Largura total */
+        padding: 15px; /* Mais fácil de clicar */
+    }
+    
+    /* Links ocupam 100% da largura para o botão esticar */
+    .btnWrapper a {
+        width: 100%;
     }
 }

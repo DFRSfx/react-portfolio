@@ -38,7 +38,9 @@ export const Home = () => {
                   />
                 </h1>
                 <p className="mb-1x">{t('home.description')}</p>
-                <div className="intro_btn-action pb-5">
+                
+                {/* ALTERAÇÃO AQUI: Adicionei styles.btnWrapper */}
+                <div className={`${styles.btnWrapper} pb-5`}>
                   <a onClick={() => {
                     const element = document.getElementById('portfolio');
                     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -165,23 +165,35 @@
   
   .panel.active {
     flex: none;
-    height: 400px; /* Altura aberto */
+    height: 500px; /* Aumentado para acomodar descrições longas */
   }
 
-  /* Título vertical em mobile fica horizontal */
+  /* Título horizontal em mobile (painéis fechados) */
   .verticalTitle {
     transform: none;
     bottom: auto;
     top: 50%;
     left: 20px;
-    margin-top: -15px; /* Metade da altura da fonte para centrar */
+    right: 20px; /* Limite direito para não sair do painel */
+    margin-top: -15px;
     font-size: 1.2rem;
     rotate: 0deg;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Mostra "..." se o título for muito longo */
   }
 
   /* Ajustes de conteúdo em mobile */
   .projectTitle {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+
+  /* Limita descrições longas a 4 linhas para não empurrar o título para fora */
+  .projectDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.95rem;
   }
 
   .content {
