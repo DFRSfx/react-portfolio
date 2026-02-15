@@ -58,8 +58,10 @@ export const About = () => {
             </section>
 
             <section className={styles.tools}>
-              <h2 className={styles.sectionTitle}>Ferramentas</h2>
-              <BallCanvasGrid tools={tools} cols={cols} />
+              <h2 className={styles.sectionTitle} style={{ marginBottom: 0 }}>Ferramentas</h2>
+              <div style={{ marginTop: "-20px" }}>
+                <BallCanvasGrid tools={tools} cols={cols} />
+              </div>
             </section>
           </div>
         </div>

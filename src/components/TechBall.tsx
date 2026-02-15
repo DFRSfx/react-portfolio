@@ -18,7 +18,7 @@ interface BallProps {
 const SPACING = 6.5; // > ball diameter (5.5) to guarantee a gap between balls
 const FOV = 50;
 const ROW_HEIGHT_PX = 150;
-const FLOAT_MARGIN = 4; // floatIntensity={2} can displace balls ~2 units on each side
+const FLOAT_MARGIN = 1; // floatIntensity={2} displaces ~0.2 units max (floatIntensity/10)
 
 // ─── Camera adapts to the actual canvas size so all balls always fit ──────────
 const CameraSetup: React.FC<{ tools: ToolItem[]; cols: number }> = ({ tools, cols }) => {
@@ -160,8 +160,6 @@ const BallCanvasGrid: React.FC<{ tools: ToolItem[]; cols?: number }> = ({
   const canvasHeight = totalRows * ROW_HEIGHT_PX;
 
   return (
-    // touch-action: none is required so the browser doesn't intercept
-    // touch events for page scrolling when the user drags a ball on mobile
     <div style={{ width: "100%", height: `${canvasHeight}px`, touchAction: "none" }}>
       <Canvas
         frameloop="always"
