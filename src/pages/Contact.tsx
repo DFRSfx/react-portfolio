@@ -1,184 +1,86 @@
-import { useState, ChangeEvent, FormEvent } from "react";
-import * as emailjs from "emailjs-com";
 import styles from "./Contact.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Alert } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-interface FormData {
-  email: string;
-  name: string;
-  message: string;
-  loading: boolean;
-  show: boolean;
-  alertmessage: string;
-  variant: string;
-}
+const EMAIL = "dariofrsoares@gmail.com";
+const PHONE = "+351 919792186";
+const CV_PATH = "/cv/dario-soares-cv.pdf";
 
 export const ContactUs = () => {
   const { t } = useTranslation();
-  const contactConfig = {
-    YOUR_EMAIL: "dariofrsoares@icloud.com",
-    YOUR_FONE: "+351 919792186",
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
-  };
-
-  const [formData, setFormdata] = useState<FormData>({
-    email: "",
-    name: "",
-    message: "",
-    loading: false,
-    show: false,
-    alertmessage: "",
-    variant: "",
-  });
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormdata({ ...formData, loading: true });
-
-    const templateParams = {
-      from_name: formData.email,
-      user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
-      message: formData.message,
-    };
-
-    emailjs
-      .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setFormdata({
-            ...formData,
-            loading: false,
-            alertmessage: t('contact.successMessage'),
-            variant: "success",
-            show: true,
-          });
-        },
-        (error) => {
-          console.log(error.text);
-          setFormdata({
-            ...formData,
-            alertmessage: `${t('contact.errorMessage')} ${error.text}`,
-            variant: "danger",
-            show: true,
-          });
-          document.getElementsByClassName("co_alert")[0].scrollIntoView();
-        }
-      );
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormdata({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   return (
     <HelmetProvider>
-      <Container>
+      <div className={styles.contactPage}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{t('contact.meta.title')}</title>
           <meta name="description" content={t('contact.meta.description')} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">{t('contact.pageTitle')}</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="12">
-            <Alert
-              variant={formData.variant}
-              className={`rounded-0 co_alert ${
-                formData.show ? "d-block" : "d-none"
-              }`}
-              onClose={() => setFormdata({ ...formData, show: false })}
-              dismissible
-            >
-              <p className="my-0">{formData.alertmessage}</p>
-            </Alert>
-          </Col>
-          <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">{t('contact.sectionTitle')}</h3>
-            <address>
-              <strong>{t('contact.email')}</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
-              <br />
-              <br />
-              {contactConfig.YOUR_FONE && (
-                <p>
-                  <strong>{t('contact.phone')}</strong> {contactConfig.YOUR_FONE}
-                </p>
-              )}
-            </address>
-            <p>{t('contact.description')}</p>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center">
-            <form onSubmit={handleSubmit} className={`${styles.contactForm} w-100`}>
-              <Row>
-                <Col lg="6" className="form-group">
-                  <input
-                    className={`form-control ${styles.formControl}`}
-                    id="name"
-                    name="name"
-                    placeholder={t('contact.namePlaceholder')}
-                    value={formData.name || ""}
-                    type="text"
-                    required
-                    onChange={handleChange}
-                  />
-                </Col>
-                <Col lg="6" className="form-group">
-                  <input
-                    className={`form-control rounded-0 ${styles.formControl}`}
-                    id="email"
-                    name="email"
-                    placeholder={t('contact.emailPlaceholder')}
-                    type="email"
-                    value={formData.email || ""}
-                    required
-                    onChange={handleChange}
-                  />
-                </Col>
-              </Row>
-              <textarea
-                className={`form-control rounded-0 ${styles.formControl}`}
-                id="message"
-                name="message"
-                placeholder={t('contact.messagePlaceholder')}
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-              <br />
-              <Row>
-                <Col lg="12" className="form-group">
-                  <button className={`btn ac_btn ${styles.acBtn}`} type="submit">
-                    {formData.loading ? t('contact.sendingButton') : t('contact.sendButton')}
-                  </button>
-                </Col>
-              </Row>
-            </form>
-          </Col>
-        </Row>
-      </Container>
-      <div className={formData.loading ? styles.loadingBar : "d-none"}></div>
+
+        <header className={styles.pageHeader}>
+          <span className={styles.pageSubtitle}>{t('contact.subtitle', 'Get in touch')}</span>
+          <h1 className={styles.pageTitle}>{t('contact.pageTitle', 'Contact')}</h1>
+          <p className={styles.pageDescription}>
+            {t('contact.description', "Have a project in mind or want to work together? Drop me an email — I'll get back to you as soon as possible.")}
+          </p>
+        </header>
+
+        {/* Two action cards */}
+        <div className={styles.cardsGrid}>
+
+          {/* Email card */}
+          <a href={`mailto:${EMAIL}`} className={styles.actionCard}>
+            <div className={styles.cardIcon}>
+              <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span className={styles.cardLabel}>{t('contact.emailLabel', 'Email')}</span>
+            <h2 className={styles.cardTitle}>{EMAIL}</h2>
+            <p className={styles.cardDescription}>
+              {t('contact.emailDescription', "Best way to reach me. I typically reply within 24 hours.")}
+            </p>
+            <span className={styles.cardAction}>
+              {t('contact.emailAction', 'Send Email')}
+              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+
+          {/* CV card */}
+          <a href={CV_PATH} download className={styles.actionCard}>
+            <div className={styles.cardIcon}>
+              <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21H19.44a2 2 0 001.94-1.515L22 17" />
+              </svg>
+            </div>
+            <span className={styles.cardLabel}>{t('contact.cvLabel', 'Curriculum Vitae')}</span>
+            <h2 className={styles.cardTitle}>{t('contact.cvTitle', 'Download CV')}</h2>
+            <p className={styles.cardDescription}>
+              {t('contact.cvDescription', "Full overview of my experience, education and technical skills.")}
+            </p>
+            <span className={styles.cardAction}>
+              {t('contact.cvAction', 'Download PDF')}
+              <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+
+        </div>
+
+        {/* Phone — secondary */}
+        {PHONE && (
+          <a href={`tel:${PHONE}`} className={styles.phoneRow}>
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            {PHONE}
+          </a>
+        )}
+      </div>
     </HelmetProvider>
   );
 };

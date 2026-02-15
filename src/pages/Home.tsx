@@ -61,6 +61,14 @@ export const Home = () => {
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
                   </a>
+                  <a href="/cv/dario-soares-cv.pdf" download>
+                    <div className={`${styles.acBtn} ${styles.buttonH} btn`}>
+                      {t('home.cvButton', 'Download CV')}
+                      <div className={`${styles.ring} ${styles.one}`}></div>
+                      <div className={`${styles.ring} ${styles.two}`}></div>
+                      <div className={`${styles.ring} ${styles.three}`}></div>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,122 +1,192 @@
-.projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+/* Container Principal */
+.expandingContainer {
+  display: flex;
+  width: 90%; /* Largura do container */
+  max-width: 1200px;
+  height: 70vh; /* Altura fixa é obrigatória para este efeito */
+  min-height: 500px;
+  gap: 20px; /* Espaço entre os cartões */
+  margin: 0 auto 50px auto; /* Centrado */
+  padding: 0 10px;
 }
 
-@media (max-width: 768px) {
-    .projectsGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+/* Painel individual (Cartão) */
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  border-radius: 50px; /* Bordas bem redondas como na imagem de referência */
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5; /* Tamanho quando fechado (fino) */
+  margin: 0;
+  position: relative;
+  transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9); /* A magia da animação */
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.projectCard {
-    background: var(--primary-color);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Estado Ativo (O Selecionado) */
+.panel.active {
+  flex: 5; /* Ocupa muito mais espaço que os outros */
 }
 
-.projectCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+/* Camada escura para o texto ser legível */
+.panelOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Escurece ligeiramente as imagens */
+  transition: background 0.5s;
 }
 
-.projectImageWrapper {
-    position: relative;
-    width: 100%;
-    height: 240px;
-    overflow: hidden;
+.panel.active .panelOverlay {
+  /* Gradiente mais forte em baixo para ler a descrição no card aberto */
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
 }
 
-.projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+/* Título Vertical (Visível apenas nos cartões fechados) */
+.verticalTitle {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  font-size: 2rem;
+  font-weight: 800;
+  white-space: nowrap;
+  /* Roda o texto 90 graus para cima */
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translate(-20px, 0); 
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 
-.projectCard:hover .projectImage {
-    transform: scale(1.05);
+/* Esconde o título vertical quando o cartão abre */
+.panel.active .verticalTitle {
+  opacity: 0;
+  transform: rotate(-90deg) translate(-20px, -50px); /* Move para fora suavemente */
 }
 
-.projectOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Conteúdo Completo (Visível apenas no ativo) */
+.content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in 0.3s; /* Delay para aparecer só depois de abrir */
+  transform: translateY(20px);
 }
 
-.projectCard:hover .projectOverlay {
-    opacity: 1;
-}
-
-.projectLinks {
-    display: flex;
-    gap: 1rem;
-}
-
-.iconLink {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.iconLink:hover {
-    background: var(--text-color);
-    transform: scale(1.1);
-}
-
-.projectInfo {
-    padding: 1.5rem;
+/* Mostra o conteúdo quando ativo */
+.panel.active .content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .projectTitle {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-    margin-bottom: 0.75rem;
-    font-family: 'Marcellus', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .projectDescription {
-    color: var(--text-color);
-    opacity: 0.8;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  max-width: 600px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.projectTech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+/* Lista de tecnologias */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .techTag {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-    padding: 0.35rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
+}
+
+/* Botões / Links */
+.links {
+  display: flex;
+  gap: 15px;
+}
+
+.iconLink {
+  background: white;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+}
+
+.iconLink:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+/* --- Responsividade (Telemóvel) --- */
+@media (max-width: 768px) {
+  .expandingContainer {
+    flex-direction: column; /* Em telemóvel muda para acordeão vertical */
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .panel {
+    width: 100%;
+    height: 80px; /* Altura fechado */
+    flex: none; /* Desativa o flex grow/shrink padrão */
+  }
+  
+  .panel.active {
+    flex: none;
+    height: 400px; /* Altura aberto */
+  }
+
+  /* Título vertical em mobile fica horizontal */
+  .verticalTitle {
+    transform: none;
+    bottom: auto;
+    top: 50%;
+    left: 20px;
+    margin-top: -15px; /* Metade da altura da fonte para centrar */
+    font-size: 1.2rem;
+    rotate: 0deg;
+  }
+
+  /* Ajustes de conteúdo em mobile */
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
 }

@@ -2,14 +2,26 @@ import styles from "./About.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import BallCanvas from "../components/TechBall";
 
 export const About = () => {
   const { t } = useTranslation();
 
   const tools = [
-    "React", "TypeScript", "Express", "Node.js",
-    "MySQL", "Laravel", "PUG", "Python", "PHP", "C#", "C++", "REST APIs",
-    "Git", "AWS", "Vercel"
+    { name: "React", icon: "/icons/react.svg", color: "#1a1a2e" },
+    { name: "TypeScript", icon: "/icons/typescript.svg", color: "#1a1a2e" },
+    { name: "JavaScript", icon: "/icons/javascript.svg", color: "#1a1a2e" },
+    { name: "Node.js", icon: "/icons/nodejs.svg", color: "#1a1a2e" },
+    { name: "PHP", icon: "/icons/php.svg", color: "#1a1a2e" },
+    { name: "Python", icon: "/icons/python.svg", color: "#1a1a2e" },
+    { name: "C#", icon: "/icons/csharp.svg", color: "#1a1a2e" },
+    { name: "C++", icon: "/icons/cplusplus.svg", color: "#1a1a2e" },
+    { name: "MySQL", icon: "/icons/mysql.svg", color: "#1a1a2e" },
+    { name: "Laravel", icon: "/icons/laravel.svg", color: "#1a1a2e" },
+    { name: "Git", icon: "/icons/git.svg", color: "#1a1a2e" },
+    { name: "AWS", icon: "/icons/aws.svg", color: "#1a1a2e" },
+    { name: "Vercel", icon: "/icons/vercel.svg", color: "#1a1a2e" },
+    { name: "Pug", icon: "/icons/pug.svg", color: "#1a1a2e" },
   ];
 
   return (
@@ -22,15 +34,12 @@ export const About = () => {
         </Helmet>
 
         <div className={styles.aboutLayout}>
-          {/* Lado Esquerdo - Nome e Descrição */}
           <div className={styles.leftSide}>
             <h1 className={styles.name}>Dário Soares</h1>
             <p className={styles.role}>Full Stack Developer especializado em construir produtos web que resolvem problemas reais de negócio.</p>
           </div>
 
-          {/* Lado Direito - O Que Eu Resolvo e Ferramentas */}
           <div className={styles.rightSide}>
-            {/* O Que Eu Resolvo */}
             <section className={styles.problem}>
               <h2 className={styles.sectionTitle}>O Que Eu Resolvo</h2>
               <p className={styles.problemText}>
@@ -39,12 +48,14 @@ export const About = () => {
               </p>
             </section>
 
-            {/* Ferramentas */}
             <section className={styles.tools}>
               <h2 className={styles.sectionTitle}>Ferramentas</h2>
-              <div className={styles.toolsList}>
-                {tools.map((tool, i) => (
-                  <span key={i} className={styles.tool}>{tool}</span>
+              
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
+                {tools.map((tool) => (
+                  <div key={tool.name} title={tool.name}>
+                     <BallCanvas icon={tool.icon} color={tool.color} />
+                  </div>
                 ))}
               </div>
             </section>

@@ -1,91 +1,233 @@
-.contactForm .formControl {
-    padding: 1.375rem .75rem;
-    line-height: 1.5;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    border-radius: 0 !important;
-    border: 1px solid var(--secondary-color);
+/* ======= PAGE ======= */
+.contactPage {
+  min-height: 100vh;
+  padding: 5rem 1.5rem 7rem;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contactForm textarea.formControl {
-    resize: vertical;
-    min-height: 150px;
-    max-height: 300px;
+/* ======= HEADER ======= */
+.pageHeader {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.contactForm input.formControl {
-    margin-bottom: 2em;
-    height: calc(2.5em + .75rem + 2px);
+.pageSubtitle {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  opacity: 0.5;
+  margin-bottom: 0.75rem;
 }
 
-.contactForm {
-    padding-bottom: 5rem;
+.pageTitle {
+  font-family: 'Marcellus', serif;
+  font-size: 3.25rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 1rem;
+  line-height: 1.1;
 }
 
-.acBtn {
-    padding: 12px 40px;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: 2px solid var(--secondary-color);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.pageDescription {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
-[data-theme="light"] .acBtn {
-    color: #fff;
+:global([data-theme="dark"]) .pageDescription {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-[data-theme="dark"] .acBtn {
-    color: #000;
+:global([data-theme="light"]) .pageDescription {
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.acBtn:hover {
-    background-color: transparent;
-    color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* ======= CARDS GRID ======= */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
 }
 
-[data-theme="light"] .acBtn:hover {
-    color: #000;
+/* ======= ACTION CARD ======= */
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.25rem;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-[data-theme="dark"] .acBtn:hover {
-    color: #fff;
+.actionCard:hover {
+  transform: translateY(-4px);
 }
 
-.acBtn:active {
-    transform: translateY(0);
+:global([data-theme="dark"]) .actionCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.loadingBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    z-index: 999999999;
-    background: var(--text-color);
-    transform: translateX(100%);
-    animation: shiftRightwards 1s ease-in-out infinite;
-    animation-delay: .3s;
+:global([data-theme="dark"]) .actionCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
 }
 
-@keyframes shiftRightwards {
-    0% {
-        transform: translateX(-100%);
-    }
-    40% {
-        transform: translateX(0%);
-    }
-    60% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+:global([data-theme="light"]) .actionCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme="light"]) .actionCard:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon wrapper */
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.cardLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+:global([data-theme="dark"]) .cardLabel {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:global([data-theme="light"]) .cardLabel {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.cardTitle {
+  font-family: 'Marcellus', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.cardDescription {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin: 0 0 1.75rem;
+  flex: 1;
+}
+
+:global([data-theme="dark"]) .cardDescription {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+:global([data-theme="light"]) .cardDescription {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--secondary-color);
+  transition: gap 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.actionCard:hover .cardAction {
+  gap: 0.75rem;
+  opacity: 0.75;
+}
+
+/* ======= PHONE ROW (secondary info) ======= */
+.phoneRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+:global([data-theme="dark"]) .phoneRow {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+:global([data-theme="light"]) .phoneRow {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.55);
+}
+
+:global([data-theme="dark"]) .phoneRow:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global([data-theme="light"]) .phoneRow:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.phoneRow svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+
+  .contactPage {
+    padding: 3.5rem 1.25rem 5rem;
+  }
+
+  .actionCard {
+    padding: 1.75rem;
+  }
 }

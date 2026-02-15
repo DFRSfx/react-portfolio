@@ -9,7 +9,7 @@ const Header = () => {
   const { t } = useTranslation();
   const logotext = "DÁRIO";
   const socialprofiles = {
-    github: "https://github.com",
+    github: "https://github.com/DFRSfx",
     linkedin: "https://linkedin.com",
     instagram: "https://instagram.com",
   };

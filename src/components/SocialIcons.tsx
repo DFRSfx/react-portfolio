@@ -28,9 +28,8 @@ const ICON_MAPPING: Record<string, IconType> = {
 
 export const SocialIcons = () => {
   const socialprofils = {
-    github: "https://github.com/dariosoares",
-    linkedin: "https://linkedin.com/in/dariosoares",
-    instagram: "https://instagram.com/dariosoares",
+    github: "https://github.com/DFRSfx",
+    linkedin: "https://www.linkedin.com/in/d%C3%A1rio-soares-1395082b1/",
   };
 
   return (
