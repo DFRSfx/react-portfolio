@@ -5,6 +5,9 @@
     "about": "About",
     "contact": "Contact"
   },
+  "socialIcons": {
+    "followText": "Follow me"
+  },
   "home": {
     "greeting": "Hello, I'm Dário Soares",
     "title1": "Full Stack Developer",
@@ -22,6 +25,10 @@
     "pageTitle": "About me",
     "sectionTitle": "A little about me",
     "description": "Full Stack Developer with a passion for creating modern and efficient web solutions. Specialized in React, TypeScript, Node.js and modern development technologies. Focused on writing clean, performant and scalable code.",
+    "role": "Full Stack Developer specialized in building web products that solve real business problems.",
+    "problemTitle": "What I Solve",
+    "problemText": "Companies lose money with slow systems, confusing interfaces and manual processes. I build fast, intuitive and automated applications that increase conversions and save time.",
+    "toolsTitle": "Tools",
     "experienceTitle": "Experience",
     "skillsTitle": "Skills",
     "servicesTitle": "Services",
@@ -89,28 +96,16 @@
     },
     "projects": {
       "project1": {
-        "title": "Dashboard Analytics",
-        "description": "Web application for real-time data visualization with interactive charts and custom reports."
+        "title": "Biblioteca ISLA Gaia",
+        "description": "Web application for school library management, allowing loan and return management of books, title search and user management."
       },
       "project2": {
-        "title": "E-commerce Platform",
-        "description": "Complete online sales platform with shopping cart, payments and product management."
+        "title": "Arte em Ponto Ecommerce",
+        "description": "E-commerce platform for selling unique crochet creations, with shopping cart functionality, secure payment and inventory management."
       },
       "project3": {
-        "title": "Task Manager Pro",
-        "description": "Task management and productivity system with team collaboration and timelines."
-      },
-      "project4": {
-        "title": "Social Media App",
-        "description": "Social network with feed, posts, comments and real-time like system."
-      },
-      "project5": {
-        "title": "CRM System",
-        "description": "Customer relationship management system, sales pipeline and automation."
-      },
-      "project6": {
-        "title": "Blog Platform",
-        "description": "Blog platform with WYSIWYG editor, content management and optimized SEO."
+        "title": "Junta de Freguesia de Sermonde",
+        "description": "Institutional website for Junta de Freguesia de Sermonde, with information about services, events and contacts."
       }
     }
   }

@@ -45,20 +45,19 @@ export const About = () => {
         <div className={styles.aboutLayout}>
           <div className={styles.leftSide}>
             <h1 className={styles.name}>Dário Soares</h1>
-            <p className={styles.role}>Full Stack Developer especializado em construir produtos web que resolvem problemas reais de negócio.</p>
+            <p className={styles.role}>{t('about.role')}</p>
           </div>
 
           <div className={styles.rightSide}>
             <section className={styles.problem}>
-              <h2 className={styles.sectionTitle}>O Que Eu Resolvo</h2>
+              <h2 className={styles.sectionTitle}>{t('about.problemTitle')}</h2>
               <p className={styles.problemText}>
-                Empresas perdem dinheiro com sistemas lentos, interfaces confusas e processos manuais.
-                Eu construo aplicações rápidas, intuitivas e automatizadas que aumentam conversão e economizam tempo.
+                {t('about.problemText')}
               </p>
             </section>
 
             <section className={styles.tools}>
-              <h2 className={styles.sectionTitle} style={{ marginBottom: 0 }}>Ferramentas</h2>
+              <h2 className={styles.sectionTitle} style={{ marginBottom: 0 }}>{t('about.toolsTitle')}</h2>
               <div style={{ marginTop: "-20px" }}>
                 <BallCanvasGrid tools={tools} cols={cols} />
               </div>

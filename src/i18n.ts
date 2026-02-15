@@ -20,14 +20,25 @@ i18n
   .init({
     resources,
     fallbackLng: 'en', // Idioma padrão
+    defaultNS: 'translation',
+    ns: 'translation',
     debug: false,
     interpolation: {
       escapeValue: false // React já faz escape por padrão
     },
     detection: {
       order: ['localStorage', 'navigator'], // Primeiro verifica localStorage, depois navegador
-      caches: ['localStorage'] // Guarda a escolha do utilizador
+      caches: ['localStorage'], // Guarda a escolha do utilizador
+      lookupLocalStorage: 'i18nextLng',
+      lookupFromPathIndex: 0,
+      lookupFromSubdomainIndex: 0,
+      cacheUserLanguageKey: 'i18nextLng'
     }
   });
+
+// Initialize with 'en' if localStorage doesn't have a saved language
+if (!localStorage.getItem('i18nextLng')) {
+  i18n.changeLanguage('en');
+}
 
 export default i18n;

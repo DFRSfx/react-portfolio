@@ -5,6 +5,9 @@
     "about": "Sobre",
     "contact": "Contacto"
   },
+  "socialIcons": {
+    "followText": "Segue-me"
+  },
   "home": {
     "greeting": "Olá, sou o Dário Soares",
     "title1": "Full Stack Developer",
@@ -22,6 +25,10 @@
     "pageTitle": "Sobre mim",
     "sectionTitle": "Um pouco sobre mim",
     "description": "Desenvolvedor Full Stack com paixão por criar soluções web modernas e eficientes. Especializado em React, TypeScript, Node.js e tecnologias modernas de desenvolvimento. Focado em escrever código limpo, performático e escalável.",
+    "role": "Full Stack Developer especializado em construir produtos web que resolvem problemas reais de negócio.",
+    "problemTitle": "O Que Eu Resolvo",
+    "problemText": "Empresas perdem dinheiro com sistemas lentos, interfaces confusas e processos manuais. Eu construo aplicações rápidas, intuitivas e automatizadas que aumentam conversão e economizam tempo.",
+    "toolsTitle": "Ferramentas",
     "experienceTitle": "Experiência",
     "skillsTitle": "Competências",
     "servicesTitle": "Serviços",
@@ -89,28 +96,16 @@
     },
     "projects": {
       "project1": {
-        "title": "Dashboard Analytics",
-        "description": "Aplicação web para visualização de dados em tempo real com gráficos interativos e relatórios personalizados."
+        "title": "Biblioteca ISLA Gaia",
+        "description": "Aplicação web para gestão de biblioteca escolar, permitindo gestão de empréstimos e devolução de livros, pesquisa de títulos e gestão de utilizadores."
       },
       "project2": {
-        "title": "E-commerce Platform",
-        "description": "Plataforma completa de vendas online com carrinho, pagamentos e gestão de produtos."
+        "title": "Arte em Ponto Ecommerce",
+        "description": "Plataforma de comércio eletrónico para venda de criações únicas em croche, com funcionalidades de carrinho de compras, pagamento seguro e gestão de inventário."
       },
       "project3": {
-        "title": "Task Manager Pro",
-        "description": "Sistema de gestão de tarefas e produtividade com colaboração em equipe e timelines."
-      },
-      "project4": {
-        "title": "Social Media App",
-        "description": "Rede social com feed, posts, comentários e sistema de likes em tempo real."
-      },
-      "project5": {
-        "title": "CRM System",
-        "description": "Sistema de gestão de relacionamento com clientes, pipeline de vendas e automação."
-      },
-      "project6": {
-        "title": "Blog Platform",
-        "description": "Plataforma de blog com editor WYSIWYG, gestão de conteúdo e SEO otimizado."
+        "title": "Junta de Freguesia de Sermonde",
+        "description": "Website institucional para a Junta de Freguesia de Sermonde, com informações sobre serviços, eventos e contactos."
       }
     }
   }

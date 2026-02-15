@@ -23,26 +23,25 @@ export const Portfolio: React.FC = () => {
   const dataportfolio: Project[] = [
     {
       img: "/images/projects/biblioteca-islagaia.pt.webp",
-      title: 'Biblioteca ISLA Gaia',
-      description: 'Aplicação web para gestão de biblioteca escolar, permitindo gestão de empréstimos e devolução de livros, pesquisa de títulos e gestão de utilizadores.',
+      title: t('portfolio.projects.project1.title'),
+      description: t('portfolio.projects.project1.description'),
       technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL"],
       link: "https://biblioteca-islagaia.pt",
     },
     {
       img: "/images/projects/arteemponto.pt.webp",
-      title: 'Arte em Ponto Ecommerce',
-      description: 'Plataforma de comércio eletrónico para venda de criações únicas em croche, com funcionalidades de carrinho de compras, pagamento seguro e gestão de inventário.',
+      title: t('portfolio.projects.project2.title'),
+      description: t('portfolio.projects.project2.description'),
       technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "Stripe", "MySQL"],
       link: "https://arteemponto.pt",
     },
     {
       img: "/images/projects/jf-sermonde.pt.webp",
-      title: 'Junta de Freguesia de Sermonde',
-      description: 'Website institucional para a Junta de Freguesia de Sermonde, com informações sobre serviços, eventos e contactos.',
+      title: t('portfolio.projects.project3.title'),
+      description: t('portfolio.projects.project3.description'),
       technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL"],
       link: "https://jf-sermonde.pt",
     },
-    // Podes adicionar mais projetos aqui
   ];
 
   return (

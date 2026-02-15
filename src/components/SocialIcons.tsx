@@ -12,6 +12,7 @@ import {
   FaCircle
 } from "react-icons/fa";
 import { IconType } from "react-icons";
+import { useTranslation } from "react-i18next";
 
 const ICON_MAPPING: Record<string, IconType> = {
   default: FaCircle,
@@ -27,6 +28,7 @@ const ICON_MAPPING: Record<string, IconType> = {
 };
 
 export const SocialIcons = () => {
+  const { t } = useTranslation();
   const socialprofils = {
     github: "https://github.com/DFRSfx",
     linkedin: "https://www.linkedin.com/in/d%C3%A1rio-soares-1395082b1/",
@@ -46,7 +48,7 @@ export const SocialIcons = () => {
           );
         })}
       </ul>
-      <p>Segue-me</p>
+      <p>{t('socialIcons.followText')}</p>
     </div>
   );
 };
