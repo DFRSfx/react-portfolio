@@ -74,6 +74,11 @@
     opacity: 0.9;
 }
 
+/* Título da secção Ferramentas mais próximo do canvas */
+.tools .sectionTitle {
+    margin-bottom: 0;
+}
+
 /* Ferramentas */
 .toolsList {
     display: flex;

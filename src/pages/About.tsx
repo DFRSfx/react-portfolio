@@ -3,17 +3,17 @@ import styles from "./About.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import BallCanvas from "../components/TechBall";
+import BallCanvasGrid from "../components/TechBall";
 
 export const About = () => {
   const { t } = useTranslation();
-  const [isMobile, setIsMobile] = useState(false);
+  const [cols, setCols] = useState(5);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    const update = () => setCols(window.innerWidth <= 768 ? 3 : 5);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   const tools = [
@@ -59,25 +59,7 @@ export const About = () => {
 
             <section className={styles.tools}>
               <h2 className={styles.sectionTitle}>Ferramentas</h2>
-              
-              {isMobile ? (
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center" }}>
-                  {tools.map((tool) => (
-                    <div key={tool.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", width: "60px" }}>
-                      <img src={tool.icon} alt={tool.name} style={{ width: "44px", height: "44px", objectFit: "contain" }} />
-                      <span style={{ fontSize: "0.65rem", fontWeight: 600, opacity: 0.7, textAlign: "center" }}>{tool.name}</span>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
-                  {tools.map((tool) => (
-                    <div key={tool.name} title={tool.name}>
-                      <BallCanvas icon={tool.icon} color={tool.color} />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <BallCanvasGrid tools={tools} cols={cols} />
             </section>
           </div>
         </div>
