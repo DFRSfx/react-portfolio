@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
@@ -8,10 +9,10 @@ import { useTranslation } from "react-i18next";
 const Header = () => {
   const { t } = useTranslation();
   const logotext = "DÁRIO";
+
   const socialprofiles = {
     github: "https://github.com/DFRSfx",
-    linkedin: "https://linkedin.com",
-    instagram: "https://instagram.com",
+    linkedin: "https://www.linkedin.com/in/d%C3%A1rio-soares-1395082b1/",
   };
 
   const [isActive, setActive] = useState(false);
@@ -68,11 +69,17 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className={`${styles.menuFooter} d-flex flex-column flex-md-row justify-content-between align-items-md-center position-absolute w-100 p-3`}>
-            <div className="d-flex">
-            <a href={socialprofiles.github}>Github</a>
-            <a href={socialprofiles.linkedin}>LinkedIn</a>
-            <a href={socialprofiles.instagram}>Instagram</a>
+          <div className={`${styles.menuFooter} d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center position-absolute w-100 p-3`}>
+            <div className={`d-flex align-items-center ${styles.socialSection}`}>
+              <span className={styles.followText}>Follow me</span>
+              <a href={socialprofiles.github} aria-label="GitHub" className={styles.socialLinkItem}>
+                <FaGithub />
+                <span>Github</span>
+              </a>
+              <a href={socialprofiles.linkedin} aria-label="LinkedIn" className={styles.socialLinkItem}>
+                <FaLinkedin />
+                <span>LinkedIn</span>
+              </a>
             </div>
             <p className="copyright m-0">© {new Date().getFullYear()} {logotext}</p>
           </div>

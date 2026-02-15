@@ -17,20 +17,20 @@ export const About = () => {
   }, []);
 
   const tools = [
-    { name: "React", icon: "/icons/react.svg", color: "#1a1a2e" },
-    { name: "TypeScript", icon: "/icons/typescript.svg", color: "#1a1a2e" },
-    { name: "JavaScript", icon: "/icons/javascript.svg", color: "#1a1a2e" },
-    { name: "Node.js", icon: "/icons/nodejs.svg", color: "#1a1a2e" },
-    { name: "PHP", icon: "/icons/php.svg", color: "#1a1a2e" },
-    { name: "Python", icon: "/icons/python.svg", color: "#1a1a2e" },
-    { name: "C#", icon: "/icons/csharp.svg", color: "#1a1a2e" },
-    { name: "C++", icon: "/icons/cplusplus.svg", color: "#1a1a2e" },
-    { name: "MySQL", icon: "/icons/mysql.svg", color: "#1a1a2e" },
-    { name: "Laravel", icon: "/icons/laravel.svg", color: "#1a1a2e" },
-    { name: "Git", icon: "/icons/git.svg", color: "#1a1a2e" },
-    { name: "AWS", icon: "/icons/aws.svg", color: "#1a1a2e" },
-    { name: "Vercel", icon: "/icons/vercel.svg", color: "#1a1a2e" },
-    { name: "Pug", icon: "/icons/pug.svg", color: "#1a1a2e" },
+    { name: "React", icon: "/images/icons/react.svg", color: "#1a1a2e" },
+    { name: "TypeScript", icon: "/images/icons/typescript.svg", color: "#1a1a2e" },
+    { name: "JavaScript", icon: "/images/icons/javascript.svg", color: "#1a1a2e" },
+    { name: "Node.js", icon: "/images/icons/nodejs.svg", color: "#1a1a2e" },
+    { name: "PHP", icon: "/images/icons/php.svg", color: "#1a1a2e" },
+    { name: "Python", icon: "/images/icons/python.svg", color: "#1a1a2e" },
+    { name: "C#", icon: "/images/icons/csharp.svg", color: "#1a1a2e" },
+    { name: "C++", icon: "/images/icons/cplusplus.svg", color: "#1a1a2e" },
+    { name: "MySQL", icon: "/images/icons/mysql.svg", color: "#1a1a2e" },
+    { name: "Laravel", icon: "/images/icons/laravel.svg", color: "#1a1a2e" },
+    { name: "Git", icon: "/images/icons/git.svg", color: "#1a1a2e" },
+    { name: "AWS", icon: "/images/icons/aws.svg", color: "#1a1a2e" },
+    { name: "Vercel", icon: "/images/icons/vercel.svg", color: "#1a1a2e" },
+    { name: "Pug", icon: "/images/icons/pug.svg", color: "#1a1a2e" },
   ];
 
   return (

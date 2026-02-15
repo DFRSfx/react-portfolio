@@ -7,10 +7,8 @@ const LanguageSelector = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: "pt", label: "PT", fullLabel: "Português", flag: "🇵🇹" },
-    { code: "en", label: "EN", fullLabel: "English", flag: "🇬🇧" },
-    { code: "es", label: "ES", fullLabel: "Español", flag: "🇪🇸" },
-    { code: "fr", label: "FR", fullLabel: "Français", flag: "🇫🇷" },
+    { code: "pt", label: "PT", fullLabel: "Português", flag: "/images/icons/flags/pt.svg" },
+    { code: "en", label: "EN", fullLabel: "English", flag: "/images/icons/flags/en.svg" },
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
@@ -44,7 +42,7 @@ const LanguageSelector = () => {
         aria-label="Select Language"
         title="Escolher idioma"
       >
-        <span className="lang-flag">{currentLanguage.flag}</span>
+        <img src={currentLanguage.flag} alt={currentLanguage.label} className="lang-flag" />
         <span className="lang-label">{currentLanguage.fullLabel}</span>
       </button>
 
@@ -56,7 +54,7 @@ const LanguageSelector = () => {
               className={`language-option ${i18n.language === lang.code ? 'active' : ''}`}
               onClick={() => changeLanguage(lang.code)}
             >
-              <span className="lang-flag">{lang.flag}</span>
+              <img src={lang.flag} alt={lang.label} className="lang-flag" />
               <span className="lang-label">{lang.fullLabel}</span>
             </button>
           ))}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { WiMoonAltWaningCrescent4, WiDaySunny } from "react-icons/wi";
+import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -19,7 +19,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       title={`Mudar para modo ${theme === "dark" ? "claro" : "escuro"}`}
     >
-      {theme === "dark" ? <WiDaySunny /> : <WiMoonAltWaningCrescent4 />}
+      {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
     </div>
   );
 };

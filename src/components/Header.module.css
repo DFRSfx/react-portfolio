@@ -21,6 +21,11 @@
 .menuButton {
     color: var(--text-color);
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 50px;
 }
 
 .menuButton:focus,
@@ -130,6 +135,10 @@
     overflow: hidden auto;
 }
 
+.menuContainer {
+    padding-bottom: 240px;
+}
+
 .theMenu {
     padding-top: 20vh;
     padding-bottom: 20vh;
@@ -170,10 +179,14 @@
 }
 
 .menuFooter {
+    position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     font-family: Marcellus;
     font-size: 14px;
     background: var(--primary-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menuFooter a {
@@ -185,4 +198,108 @@
 
 .menuFooter a:hover {
     color: var(--text-color-3);
+}
+
+.socialSection {
+    gap: 20px;
+    align-items: center;
+}
+
+.followText {
+    font-size: 0.9rem;
+    font-family: Marcellus;
+    color: var(--text-color-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.socialLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color-2);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.socialLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-color-3);
+    transform: translateY(-2px);
+}
+
+.socialLinkItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color-2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-family: Marcellus;
+}
+
+.socialLinkItem svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.socialLinkItem:hover {
+    color: var(--text-color-3);
+    gap: 12px;
+}
+
+@media (max-width: 576px) {
+    .menuContainer {
+        padding-bottom: 220px;
+    }
+
+    .socialSection {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .followText {
+        font-size: 0.8rem;
+        flex: 0 0 100%;
+        margin-bottom: 8px;
+    }
+
+    .socialLink {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .socialLinkItem {
+        font-size: 0.85rem;
+        gap: 6px;
+    }
+
+    .socialLinkItem svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menuFooter {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .menuFooter p {
+        width: 100%;
+        text-align: left;
+        font-size: 0.85rem;
+        margin: 0;
+    }
 }
