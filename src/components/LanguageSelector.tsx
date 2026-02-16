@@ -11,7 +11,15 @@ const LanguageSelector = () => {
     { code: "en", label: "EN", fullLabel: "English", flag: "/images/icons/flags/en.svg" },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
+  const [currentLanguage, setCurrentLanguage] = useState(() => {
+    const detected = languages.find((lang) => lang.code === i18n.language);
+    return detected || languages[1]; // Default to 'en' instead of first item
+  });
+
+  useEffect(() => {
+    const detected = languages.find((lang) => lang.code === i18n.language);
+    setCurrentLanguage(detected || languages[1]); // Default to 'en'
+  }, [i18n.language]);
 
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);

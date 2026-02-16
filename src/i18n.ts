@@ -33,11 +33,23 @@ i18n
       lookupFromPathIndex: 0,
       lookupFromSubdomainIndex: 0
     }
+  }, (err) => {
+    if (err) console.error('i18n init error:', err);
   });
 
-// Initialize with 'en' if localStorage doesn't have a saved language
-if (!localStorage.getItem('i18nextLng')) {
-  i18n.changeLanguage('en');
-}
+// Persist language to localStorage on every manual changeLanguage() call.
+// The LanguageDetector's caches option only writes on detection at init,
+// not when changeLanguage() is called programmatically.
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('i18nextLng', lng);
+});
+
+// Ensure fallback to 'en' if no valid language is detected and sync header
+i18n.on('initialized', () => {
+  const detectedLanguage = i18n.language;
+  if (!detectedLanguage || !['pt', 'en'].includes(detectedLanguage)) {
+    i18n.changeLanguage('en');
+  }
+});
 
 export default i18n;
