@@ -18,6 +18,25 @@
     width: 100%;
 }
 
+@media (max-width: 767px) {
+    .siteHeader > div {
+        justify-content: center;
+    }
+
+    .siteHeader .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    .siteHeader .header-actions {
+        position: absolute;
+        right: 20px;
+        z-index: 1001;
+    }
+}
+
 .menuButton {
     color: var(--text-color);
     transition: all 0.3s ease;
@@ -41,6 +60,13 @@
     fill: var(--text-color-2);
     color: var(--text-color-2);
     pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .menuButton svg {
+        width: 2.5em;
+        height: 2.5em;
+    }
 }
 
 .navAc {
@@ -106,6 +132,7 @@
     top: 0;
     width: 100%;
     visibility: hidden;
+    z-index: 999;
 }
 
 .menuOpened {
@@ -139,10 +166,35 @@
     padding-bottom: 240px;
 }
 
+@media (max-width: 991px) {
+    .menuContainer {
+        margin-left: 0;
+    }
+}
+
 .theMenu {
     padding-top: 20vh;
     padding-bottom: 20vh;
     padding-left: 0;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .theMenu {
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+    }
+
+    .menuContainer {
+        padding-bottom: 300px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .theMenu {
+        padding-top: 12vh;
+        padding-bottom: 12vh;
+    }
 }
 
 @media (min-width: 992px) {
@@ -152,17 +204,18 @@
     .theMenu {
         padding-top: 10vh;
         padding-bottom: 10vh;
+        text-align: left;
     }
 }
 
 .theMenu .menuItem > a {
     color: var(--text-color-2);
-    line-height: 1;
-    font-size: 2rem;
-    display: inline-block;
+    line-height: 1.5;
+    font-size: 2.5rem;
+    display: block;
     position: relative;
     transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
-    padding: 4px 0px;
+    padding: 8px 0px;
     text-decoration: none;
     font-family: Marcellus;
     cursor: pointer;
@@ -172,9 +225,29 @@
     color: var(--text-color-3);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 576px) {
+    .theMenu .menuItem > a {
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+    .theMenu .menuItem > a {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .theMenu .menuItem > a {
+        font-size: 8.0vw;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1024px) {
     .theMenu .menuItem > a {
         font-size: 4.8vw;
+        display: inline-block;
     }
 }
 
@@ -257,10 +330,6 @@
 }
 
 @media (max-width: 576px) {
-    .menuContainer {
-        padding-bottom: 220px;
-    }
-
     .socialSection {
         gap: 12px;
         flex-wrap: wrap;
