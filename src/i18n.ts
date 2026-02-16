@@ -31,8 +31,7 @@ i18n
       caches: ['localStorage'], // Guarda a escolha do utilizador
       lookupLocalStorage: 'i18nextLng',
       lookupFromPathIndex: 0,
-      lookupFromSubdomainIndex: 0,
-      cacheUserLanguageKey: 'i18nextLng'
+      lookupFromSubdomainIndex: 0
     }
   });
 
