@@ -4,10 +4,11 @@ import { useTranslation } from "react-i18next";
 
 const EMAIL = "dariofrsoares@gmail.com";
 const PHONE = "+351 919792186";
-const CV_PATH = "/cv/dario-soares-cv.pdf";
 
 export const ContactUs = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const CV_PATH = i18n.language === 'pt' ? '/cv/CV_Dario_Soares_PT.pdf' : '/cv/CV_Dario_Soares_EN.pdf';
 
   return (
     <HelmetProvider>

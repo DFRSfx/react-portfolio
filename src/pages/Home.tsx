@@ -4,7 +4,9 @@ import Typewriter from "typewriter-effect";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const CV_PATH = i18n.language === 'pt' ? '/cv/CV_Dario_Soares_PT.pdf' : '/cv/CV_Dario_Soares_EN.pdf';
 
   return (
     <HelmetProvider>
@@ -63,7 +65,7 @@ export const Home = () => {
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
                   </a>
-                  <a href="/cv/dario-soares-cv.pdf" download>
+                  <a href={CV_PATH} download>
                     <div className={`${styles.acBtn} ${styles.buttonH} btn`}>
                       {t('home.cvButton', 'Download CV')}
                       <div className={`${styles.ring} ${styles.one}`}></div>
