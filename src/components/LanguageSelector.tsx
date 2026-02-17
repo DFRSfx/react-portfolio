@@ -48,6 +48,8 @@ const LanguageSelector = () => {
         className="language-button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Select Language"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
         title="Escolher idioma"
       >
         <img src={currentLanguage.flag} alt={currentLanguage.label} className="lang-flag" />
@@ -55,12 +57,15 @@ const LanguageSelector = () => {
       </button>
 
       {isOpen && (
-        <div className="language-dropdown">
+        <div className="language-dropdown" role="listbox">
           {languages.map((lang) => (
             <button
               key={lang.code}
               className={`language-option ${i18n.language === lang.code ? 'active' : ''}`}
               onClick={() => changeLanguage(lang.code)}
+              role="option"
+              aria-selected={i18n.language === lang.code}
+              aria-label={`Choose ${lang.fullLabel}`}
             >
               <img src={lang.flag} alt={lang.label} className="lang-flag" />
               <span className="lang-label">{lang.fullLabel}</span>

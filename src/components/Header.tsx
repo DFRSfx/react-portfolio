@@ -42,7 +42,12 @@ const Header = () => {
           <div className="d-flex align-items-center header-actions">
             <LanguageSelector />
             <ThemeToggle />
-            <button className={`${styles.menuButton} ${styles.navAc}`} onClick={handleToggle}>
+            <button
+              className={`${styles.menuButton} ${styles.navAc}`}
+              onClick={handleToggle}
+              aria-label={isActive ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isActive}
+            >
               {isActive ? <VscClose /> : <VscGrabber />}
             </button>
           </div>

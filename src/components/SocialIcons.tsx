@@ -41,7 +41,7 @@ export const SocialIcons = () => {
           const IconComponent = ICON_MAPPING[platform] || ICON_MAPPING.default;
           return (
             <li key={platform}>
-              <a href={url}>
+              <a href={url} aria-label={`Visit my ${platform.charAt(0).toUpperCase() + platform.slice(1)} profile`}>
                 <IconComponent />
               </a>
             </li>

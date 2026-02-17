@@ -14,13 +14,15 @@ const ThemeToggle = () => {
   }, [theme]);
 
   return (
-    <div
+    <button
       className="theme-toggle"
       onClick={toggleTheme}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      aria-expanded={theme === "dark"}
       title={`Mudar para modo ${theme === "dark" ? "claro" : "escuro"}`}
     >
       {theme === "dark" ? <Sun size={24} /> : <Moon size={24} />}
-    </div>
+    </button>
   );
 };
 
