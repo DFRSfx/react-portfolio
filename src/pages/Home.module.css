@@ -130,6 +130,12 @@ section {
 [data-theme="dark"] .buttonP { color: #000; }
 .buttonP:hover { color: var(--primary-color); }
 
+/* Contact and Download CV buttons - dark background with sufficient contrast */
+.buttonH { background: transparent; color: var(--secondary-color); }
+[data-theme="light"] .buttonH { background: #000; color: #fff; }
+[data-theme="dark"] .buttonH { background: #fff; color: #000; }
+.buttonH:hover { color: var(--primary-color); }
+
 @media (max-width: 991.98px) {
     .introSec .hBgImage {
         height: 50vh;
