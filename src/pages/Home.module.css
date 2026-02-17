@@ -106,7 +106,8 @@ section {
 }
 
 .acBtn:hover {
-    box-shadow: 6px 6px 0px var(--text-color), -6px -6px 0px var(--text-color);
+    box-shadow: 8px 8px 0px rgba(204, 0, 0, 0.8), -8px -8px 0px rgba(204, 0, 0, 0.8);
+    transform: translate(-2px, -2px);
 }
 
 /* Animações dos anéis (mantidas) */
