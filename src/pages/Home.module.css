@@ -106,14 +106,40 @@ section {
 }
 
 .acBtn:hover {
-    box-shadow: 8px 8px 0px rgba(204, 0, 0, 0.8), -8px -8px 0px rgba(204, 0, 0, 0.8);
-    transform: translate(-2px, -2px);
+    transform: scale(1.05);
+    border-width: 3px;
 }
 
-/* Animações dos anéis (mantidas) */
-.acBtn:hover .one { opacity: 1; transform: translate3d(0px, 0px, 0px); }
+/* Hover com cores invertidas para Portfolio */
+[data-theme="light"] .buttonP:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+[data-theme="dark"] .buttonP:hover {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Hover com cores invertidas para Contact/Download */
+[data-theme="light"] .buttonH:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+[data-theme="dark"] .buttonH:hover {
+    background: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Animações dos anéis desativadas no hover */
+/* .acBtn:hover .one { opacity: 1; transform: translate3d(0px, 0px, 0px); }
 .acBtn:hover .two { transform: translate3d(0px, 0px, 0px); }
-.acBtn:hover .three { transform: translate3d(0px, 0px, 0px); }
+.acBtn:hover .three { transform: translate3d(0px, 0px, 0px); } */
 
 .acBtn .ring {
     width: 100%; height: 100%; position: absolute; background: transparent;
