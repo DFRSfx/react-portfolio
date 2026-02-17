@@ -153,22 +153,12 @@
   height: 24px;
 }
 
-.iconLink svg path {
-  fill: #000000;
-  stroke: #000000;
-}
-
 .iconLink:hover {
   transform: scale(1.1);
   background-color: #000000;
   color: #ffffff;
   border-color: #ffffff;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
-}
-
-.iconLink:hover svg path {
-  fill: #ffffff;
-  stroke: #ffffff;
 }
 
 /* --- Responsividade (Telemóvel) --- */
