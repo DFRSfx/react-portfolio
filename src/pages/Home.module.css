@@ -107,7 +107,6 @@ section {
 
 .acBtn:hover {
     box-shadow: 6px 6px 0px var(--text-color), -6px -6px 0px var(--text-color);
-    color: var(--primary-color);
 }
 
 /* Animações dos anéis (mantidas) */
@@ -124,17 +123,15 @@ section {
 .acBtn .two { background-color: var(--primary-color); transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); z-index: -3; }
 .acBtn .three { background-color: var(--secondary-color); z-index: -2; transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1); }
 
-/* Cores específicas */
-.buttonP { background: var(--secondary-color); color: var(--primary-color); }
-[data-theme="light"] .buttonP { color: #fff; }
-[data-theme="dark"] .buttonP { color: #000; }
-.buttonP:hover { color: var(--primary-color); }
+/* Portfolio button - inverted colors (dark bg, light text) */
+.buttonP { background: var(--secondary-color); }
+[data-theme="light"] .buttonP { background: #000; color: #fff; }
+[data-theme="dark"] .buttonP { background: #fff; color: #000; }
 
-/* Contact and Download CV buttons - dark background with sufficient contrast */
-.buttonH { background: transparent; color: var(--secondary-color); }
+/* Contact and Download CV buttons - solid colors with good contrast */
+.buttonH { background: var(--secondary-color); }
 [data-theme="light"] .buttonH { background: #000; color: #fff; }
 [data-theme="dark"] .buttonH { background: #fff; color: #000; }
-.buttonH:hover { color: var(--primary-color); }
 
 @media (max-width: 991.98px) {
     .introSec .hBgImage {
