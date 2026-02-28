@@ -42,6 +42,13 @@ export const Portfolio: React.FC = () => {
       technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL"],
       link: "https://jf-sermonde.pt",
     },
+    {
+      img: "/images/projects/oxlynsoftware.com.webp",
+      title: t('portfolio.projects.project4.title'),
+      description: t('portfolio.projects.project4.description'),
+      technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL", "Tebex"],
+      link: "https://oxlynsoftware.com",
+    },
   ];
 
   return (

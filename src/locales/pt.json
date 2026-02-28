@@ -106,6 +106,10 @@
       "project3": {
         "title": "Junta de Freguesia de Sermonde",
         "description": "Website institucional para a Junta de Freguesia de Sermonde, com informações sobre serviços, eventos e contactos."
+      },
+      "project4": {
+        "title": "Oxlyn Software",
+        "description": "Studio de desenvolvimento especializado em scripts e resources para servidores FiveM — a popular plataforma de modificação multijogador para GTA V. Criamos soluções que permitem aos proprietários de servidores personalizar totalmente a sua experiência de jogo, desde sistemas de RPG, empregos e economias, até HUDs, inventários e mecânicas exclusivas. Com os nossos resources, qualquer servidor passa de base a uma experiência única e imersiva para a sua comunidade."
       }
     }
   }
