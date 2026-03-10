@@ -27,6 +27,7 @@ export const Portfolio: React.FC = () => {
       description: t('portfolio.projects.project1.description'),
       technologies: ["React", "Node.js", "Express", "TypeScript", "Tailwind CSS", "MySQL"],
       link: "https://biblioteca-islagaia.pt",
+      github: "https://github.com/DFRSfx/ISLAGaia-Library-Showcase",
     },
     {
       img: "/images/projects/arteemponto.pt.webp",
