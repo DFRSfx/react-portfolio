@@ -15,7 +15,7 @@ export interface ToolItem {
 }
 
 // ─── Single ball (no position prop needed – centred in its own Canvas) ────────
-const Ball: React.FC<{ imgUrl: string; color: string; isDark: boolean }> = ({ imgUrl, color, isDark }) => {
+const Ball: React.FC<{ imgUrl: string; color: string }> = ({ imgUrl, color }) => {
   const [decal] = useTexture([imgUrl]);
   const groupRef = useRef<THREE.Group>(null);
   const drag = useRef({ active: false, lastX: 0, lastY: 0, rotX: 0, rotY: 0 });
@@ -64,25 +64,17 @@ const Ball: React.FC<{ imgUrl: string; color: string; isDark: boolean }> = ({ im
           onPointerOver={() => { document.body.style.cursor = "grab"; }}
           onPointerOut={() => { if (!drag.current.active) document.body.style.cursor = "default"; }}
         >
-          <icosahedronGeometry args={[1, 1]} />
-          {isDark ? (
-            // meshBasicMaterial ignores all lighting → guaranteed pure white
-            <meshBasicMaterial color={color} polygonOffset polygonOffsetFactor={-5} />
-          ) : (
-            <meshStandardMaterial
-              color={color}
-              polygonOffset
-              polygonOffsetFactor={-5}
-              flatShading
-              roughness={0.4}
-              metalness={0.0}
-            />
-          )}
-          <Decal position={[0, 0, 1]} rotation={[0, 0, 0]} scale={1.5}>
+          <sphereGeometry args={[1, 32, 32]} />
+          <meshStandardMaterial
+            color={color}
+            roughness={0.9}
+            metalness={0.1}
+          />
+          <Decal position={[0, 0, 1]} rotation={[0, 0, 0]} scale={1.4}>
             <meshBasicMaterial
               map={decal}
               transparent
-              alphaTest={0.1}
+              alphaTest={0.05}
               polygonOffset
               polygonOffsetFactor={-10}
               toneMapped={false}
@@ -99,8 +91,12 @@ const BallCard: React.FC<{ tool: ToolItem }> = ({ tool }) => {
   const theme = useTheme();
   const isDark = theme === "dark";
 
-  // Dark mode: white ball + dark-mode icon; Light mode: tool color + light icon
-  const ballColor = isDark ? "#ffffff" : tool.color;
+  // In light mode, use defined tool color.
+  // In dark mode, convert default dark and grey balls to white for visibility,
+  // but keep the vibrant brand colors (JS, TS) so they pop beautifully!
+  const ballColor = isDark 
+    ? (tool.color === "#1a1a2e" || tool.color === "#e0e0e0" ? "#ffffff" : tool.color) 
+    : tool.color;
   const imgUrl    = isDark ? tool.icon : (tool.lightIcon ?? tool.icon);
 
   return (
@@ -112,10 +108,10 @@ const BallCard: React.FC<{ tool: ToolItem }> = ({ tool }) => {
           gl={{ preserveDrawingBuffer: true }}
           camera={{ position: [0, 0, 7], fov: 45 }}
         >
-          <ambientLight intensity={isDark ? 1.0 : 0.6} />
-          <directionalLight position={[0, 0, 0.05]} intensity={isDark ? 0 : 0.5} />
+          <ambientLight intensity={isDark ? 0.9 : 0.8} />
+          <directionalLight position={[0, 0, 5]} intensity={isDark ? 1.0 : 0.8} />
           <Suspense fallback={null}>
-            <Ball imgUrl={imgUrl} color={ballColor} isDark={isDark} />
+            <Ball imgUrl={imgUrl} color={ballColor} />
           </Suspense>
           <Preload all />
         </Canvas>

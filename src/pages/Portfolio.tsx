@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Portfolio.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
@@ -16,9 +15,6 @@ interface Project {
 
 export const Portfolio: React.FC = () => {
   const { t } = useTranslation();
-  
-  // 2. Estado para controlar qual card está ativo (começa no 0)
-  const [activeProject, setActiveProject] = useState<number>(0);
 
   const dataportfolio: Project[] = [
     {
@@ -71,26 +67,17 @@ export const Portfolio: React.FC = () => {
           </p>
         </div>
 
-        {/* 3. Container dos Cards Expansíveis */}
-        <div className={styles.expandingContainer}>
+        {/* 3. Container dos Cards Grid */}
+        <div className={styles.portfolioGrid}>
           {dataportfolio.map((project, i) => (
             <div 
               key={i} 
-              // Lógica: Se o índice for igual ao ativo, aplica a classe 'active'
-              className={`${styles.panel} ${activeProject === i ? styles.active : ''}`}
-              onClick={() => setActiveProject(i)}
+              className={styles.projectCard}
               style={{ backgroundImage: `url(${project.img})` }}
             >
-              {/* Overlay para escurecer a imagem e tornar o texto legível */}
-              <div className={styles.panelOverlay}></div>
+              <div className={styles.cardOverlay}></div>
 
-              {/* Título Vertical (Visível apenas quando o card está FECHADO) */}
-              <h3 className={styles.verticalTitle}>
-                 {project.title}
-              </h3>
-
-              {/* Conteúdo Completo (Visível apenas quando o card está ABERTO/ACTIVE) */}
-              <div className={styles.content}>
+              <div className={styles.cardContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <p className={styles.projectDescription}>{project.description}</p>
                 

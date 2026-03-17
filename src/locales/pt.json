@@ -24,14 +24,21 @@
   "about": {
     "pageTitle": "Sobre mim",
     "sectionTitle": "Um pouco sobre mim",
-    "description": "Desenvolvedor Full Stack com paixão por criar soluções web modernas e eficientes. Especializado em React, TypeScript, Node.js e tecnologias modernas de desenvolvimento. Focado em escrever código limpo, performático e escalável.",
-    "role": "Full Stack Developer especializado em construir produtos web que resolvem problemas reais de negócio.",
+    "title": "Olá, o meu nome é Dário Soares.",
+    "role": "A minha missão é construir soluções web focadas na performance e usabilidade, assegurando em cada linha de código um produto dinâmico e impactante.",
+    "description": "Sou um Full Stack Developer movido pela vontade de transformar desafios complexos em aplicações digitais simples, rápidas e escaláveis. A minha paixão por tecnologia estende-se desde a conceção visual das interfaces até à arquitetura robusta no backend. Dedico-me a estruturar código modular, limpo e seguro, equilibrando sempre o melhor design com engenharia sólida. O meu foco principal é garantir que as empresas encontram nas minhas soluções a ponte perfeita para o seu crescimento tecnológico.",
     "problemTitle": "O Que Eu Resolvo",
-    "problemText": "Empresas perdem dinheiro com sistemas lentos, interfaces confusas e processos manuais. Eu construo aplicações rápidas, intuitivas e automatizadas que aumentam conversão e economizam tempo.",
+    "problemText": "Empresas perdem dinheiro com sistemas lentos, interfaces confusas e processos manuais. Eu construo aplicações rápidas, intuitivas e automatizadas que aumentam a conversão e economizam tempo.",
     "toolsTitle": "Ferramentas",
     "experienceTitle": "Experiência",
     "skillsTitle": "Competências",
     "servicesTitle": "Serviços",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de Dados",
+      "otherTools": "Outras Ferramentas"
+    },
     "meta": {
       "title": "Sobre | Dário Soares",
       "description": "Dário Soares - Full Stack Developer especializado em React, TypeScript e desenvolvimento web moderno"
@@ -109,7 +116,7 @@
       },
       "project4": {
         "title": "Oxlyn Software",
-        "description": "Studio de desenvolvimento especializado em scripts e resources para servidores FiveM — a popular plataforma de modificação multijogador para GTA V. Criamos soluções que permitem aos proprietários de servidores personalizar totalmente a sua experiência de jogo, desde sistemas de RPG, empregos e economias, até HUDs, inventários e mecânicas exclusivas. Com os nossos resources, qualquer servidor passa de base a uma experiência única e imersiva para a sua comunidade."
+        "description": "Studio de desenvolvimento especializado em scripts e resources para servidores FiveM. Com os nossos resources, qualquer servidor passa de base a uma experiência única e imersiva para a sua comunidade."
       }
     }
   }

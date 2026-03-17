@@ -24,14 +24,21 @@
   "about": {
     "pageTitle": "About me",
     "sectionTitle": "A little about me",
-    "description": "Full Stack Developer with a passion for creating modern and efficient web solutions. Specialized in React, TypeScript, Node.js and modern development technologies. Focused on writing clean, performant and scalable code.",
-    "role": "Full Stack Developer specialized in building web products that solve real business problems.",
+    "title": "Hello, my name is Dário Soares.",
+    "role": "My mission is to build web solutions focused on performance and usability, ensuring a dynamic and impactful product in every line of code.",
+    "description": "I am a Full Stack Developer driven by the desire to transform complex challenges into simple, fast, and scalable digital applications. My passion for technology extends from the visual conception of interfaces to robust backend architecture. I am dedicated to structuring modular, clean, and secure code, always balancing the best design with solid engineering. My main focus is ensuring that businesses find the perfect bridge to their technological growth in my solutions.",
     "problemTitle": "What I Solve",
-    "problemText": "Companies lose money with slow systems, confusing interfaces and manual processes. I build fast, intuitive and automated applications that increase conversions and save time.",
+    "problemText": "Businesses lose money with slow systems, confusing interfaces, and manual processes. I build fast, intuitive, and automated applications that increase conversion and save time.",
     "toolsTitle": "Tools",
     "experienceTitle": "Experience",
     "skillsTitle": "Skills",
     "servicesTitle": "Services",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "otherTools": "Other Tools"
+    },
     "meta": {
       "title": "About | Dário Soares",
       "description": "Dário Soares - Full Stack Developer specialized in React, TypeScript and modern web development"
@@ -109,7 +116,7 @@
       },
       "project4": {
         "title": "Oxlyn Software",
-        "description": "Development studio specialized in scripts and resources for FiveM servers — the leading multiplayer modification platform for GTA V. Our products empower server owners to build unique roleplay experiences, featuring custom job systems, economies, inventories, and mechanics tailored to their communities"
+        "description": "Development studio specialized in scripts and resources for FiveM servers. Our products empower server owners to build unique roleplay experiences, featuring custom job systems, economies, inventories, and mechanics tailored to their communities"
       }
     }
   }

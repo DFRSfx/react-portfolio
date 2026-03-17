@@ -39,13 +39,22 @@ const Header = () => {
           <a className={`navbar-brand ${styles.navAc}`} onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
             {logotext}
           </a>
+
+          {/* Desktop Navigation Links */}
+          <nav className={`d-none d-lg-flex ${styles.desktopNav}`}>
+            <a onClick={() => scrollToSection('home')} className={styles.desktopNavLink}>{t('header.home')}</a>
+            <a onClick={() => scrollToSection('portfolio')} className={styles.desktopNavLink}>{t('header.portfolio')}</a>
+            <a onClick={() => scrollToSection('about')} className={styles.desktopNavLink}>{t('header.about')}</a>
+            <a onClick={() => scrollToSection('contact')} className={styles.desktopNavLink}>{t('header.contact')}</a>
+          </nav>
+
           <div className="d-flex align-items-center header-actions">
             <div className={styles.langWrapper}>
               <LanguageSelector />
             </div>
             <ThemeToggle />
             <button
-              className={`${styles.menuButton} ${styles.navAc}`}
+              className={`d-lg-none ${styles.menuButton} ${styles.navAc}`}
               onClick={handleToggle}
               aria-label={isActive ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isActive}
@@ -55,7 +64,8 @@ const Header = () => {
           </div>
         </div>
 
-        <div className={`${styles.siteNavigation} ${isActive ? styles.menuOpened : ""}`}>
+        {/* Mobile menu only visible on smaller screens */}
+        <div className={`d-lg-none ${styles.siteNavigation} ${isActive ? styles.menuOpened : ""}`}>
           <div className={`${styles.bgMenu} h-100`}>
             <div className={styles.menuWrapper}>
               <div className={`${styles.menuContainer} p-3`}>

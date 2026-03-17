@@ -2,60 +2,112 @@
 .aboutContainer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 6rem 2rem 3rem 2rem;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
-/* Layout */
+/* Layout Wrapper */
 .aboutLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 100%;
+}
+
+/* 1. Hero Quote */
+.heroQuoteContainer {
+    width: 100%;
+}
+
+.heroQuote {
+    font-size: 2.8rem;
+    line-height: 1.4;
+    color: var(--text-color);
+    font-weight: 300;
+    margin: 0;
+    max-width: 1000px;
+    font-family: inherit; /* Inherits modern crisp font */
+}
+
+/* 2. Separator */
+.separatorContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.separatorText {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.separatorLine {
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-top: 1px solid var(--text-color);
+    opacity: 0.15;
+}
+
+/* 3. Content Grid */
+.aboutContentGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
     width: 100%;
 }
 
-/* Left Side - Nome e Descrição */
-.leftSide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 2rem;
-}
-
-.name {
-    font-size: 3rem;
+.greetingTitle {
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--text-color);
-    margin-bottom: 1.5rem;
-    font-family: 'Marcellus', serif;
+    margin: 0;
     line-height: 1.2;
 }
 
-.role {
-    font-size: 1.25rem;
+.descriptionText {
+    font-size: 1.15rem;
     line-height: 1.8;
     color: var(--text-color);
-    opacity: 0.9;
-    margin: 0;
+    opacity: 0.85;
+    margin-bottom: 3rem;
+    white-space: pre-wrap; /* For paragraphs */
 }
 
-/* Right Side - Conteúdo */
-.rightSide {
+/* Problem Box (Inside Description Side) */
+.problem {
+    margin-bottom: 0;
+}
+
+/* 4. Tools Full Width */
+.toolsSection {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.toolsMainTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.toolsFlex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.toolCategoryColumn {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-/* Sections */
-.problem,
-.tools {
-    margin-bottom: 3rem;
-}
-
-.tools {
-    margin-bottom: 0;
 }
 
 .sectionTitle {
@@ -66,6 +118,14 @@
     font-family: 'Marcellus', serif;
 }
 
+.categoryTitle {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
 /* Problema */
 .problemText {
     font-size: 1.1rem;
@@ -74,86 +134,118 @@
     opacity: 0.9;
 }
 
-/* Ferramentas */
-.toolsList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+/* Ferramentas (TechBalls 3D) */
+:global(.tech-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-.tool {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--card-background, rgba(100, 108, 255, 0.1));
-    color: var(--text-color);
-    border-radius: 4px;
-    font-size: 0.95rem;
+:global(.tool-card) {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+}
+
+:global(.ball-container) {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    cursor: grab;
+}
+
+:global(.ball-container:active) {
+    cursor: grabbing;
+}
+
+:global(.tool-name) {
+    font-size: 1.1rem;
     font-weight: 500;
-    border: 1px solid rgba(100, 108, 255, 0.2);
+    color: var(--text-color);
+    padding-right: 1rem;
+    white-space: nowrap;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-    .aboutLayout {
+    .aboutContentGrid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
 
-    .leftSide {
-        padding-right: 0;
-        text-align: center;
+    .heroQuote {
+        font-size: 2.2rem;
     }
 
-    .name {
-        font-size: 2.5rem;
+    .greetingTitle {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .aboutContainer {
-        padding: 2rem 1.5rem;
+    .aboutLayout {
+        gap: 3.5rem;
     }
 
-    .name {
-        font-size: 2rem;
+    .heroQuote {
+        font-size: 1.8rem;
     }
 
-    .role {
-        font-size: 1.1rem;
+    .greetingTitle {
+        font-size: 1.8rem;
+    }
+
+    .descriptionText {
+        font-size: 1.05rem;
     }
 
     .sectionTitle {
         font-size: 1.5rem;
     }
+
+    .problemText {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
-    .aboutContainer {
-        padding: 1.5rem 1rem;
-    }
-
     .aboutLayout {
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    .name {
-        font-size: 1.75rem;
+    .heroQuote {
+        font-size: 1.5rem;
+        line-height: 1.5;
     }
 
-    .role {
-        font-size: 1rem;
+    .greetingTitle {
+        font-size: 1.5rem;
+    }
+
+    .toolsMainTitle {
+        font-size: 1.6rem;
     }
 
     .sectionTitle {
         font-size: 1.35rem;
     }
 
-    .toolsList {
-        gap: 0.5rem;
+    :global(.tech-grid) {
+        gap: 1rem;
     }
 
-    .tool {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.875rem;
+    :global(.tool-card) {
+        gap: 0.75rem;
+    }
+
+    :global(.ball-container) {
+        width: 50px;
+        height: 50px;
+    }
+    
+    :global(.tool-name) {
+        font-size: 0.95rem;
     }
 }

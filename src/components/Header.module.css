@@ -25,6 +25,49 @@
     }
 }
 
+/* Desktop Navigation */
+.desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+    justify-content: center; /* Center the navigation links */
+}
+
+.desktopNavLink {
+    color: var(--text-color);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: Marcellus, serif;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.desktopNavLink:hover {
+    color: var(--text-color-3, var(--text-color));
+    opacity: 0.8;
+}
+
+.desktopNavLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.desktopNavLink:hover::after {
+    width: 100%;
+}
+
 /* Language selector always visible */
 .langWrapper {
     display: flex;
