@@ -18,7 +18,8 @@ body::-webkit-scrollbar {
   top: 50%;
   transform: translateY(-50%);
   z-index: 48;
-  pointer-events: none;
+  padding: 20px 10px;
+  margin-right: -10px;
 }
 
 .scrollProgressTrack {
@@ -29,6 +30,7 @@ body::-webkit-scrollbar {
   border-radius: 999px;
   background: rgba(100, 116, 139, 0.28);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .scrollProgressFill {
@@ -38,11 +40,11 @@ body::-webkit-scrollbar {
   width: 6px;
   height: 0;
   border-radius: 999px;
-  /* Monotone gradient for light/dark theme adaptation */
-  background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 55%, #4b5563 100%);
+  /* Red gradient using brand color */
+  background: linear-gradient(180deg, #ff6b6b 0%, rgb(204, 0, 0) 55%, #8b0000 100%);
   box-shadow:
-    0 0 10px rgba(156, 163, 175, 0.5),
-    0 0 18px rgba(107, 114, 128, 0.3);
+    0 0 10px rgba(204, 0, 0, 0.5),
+    0 0 18px rgba(204, 0, 0, 0.3);
   transition: height 0.14s linear;
 }
 
