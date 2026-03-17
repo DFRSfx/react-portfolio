@@ -48,6 +48,11 @@ section {
         padding: 0 20px;
         text-align: center; /* Centrar texto em mobile fica melhor */
     }
+    .introSec .text h1 {
+        font-size: 24px; /* Reduce font size on mobile to prevent overflow */
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
 }
 
 .introSec .text h1 {
@@ -75,18 +80,20 @@ section {
 
 .btnWrapper a {
     text-decoration: none;
+    display: inline-block;
 }
 
-/* Estilo Base do Botão */
+    /* Estilo Base do Botão */
 .acBtn {
-    padding: 12px 20px;
+    padding: 12px 24px; /* Default desktop padding */
     color: var(--secondary-color);
     position: relative;
-    border: var(--secondary-color) 2px solid;
+    border: var(--secondary-color) 1px solid; /* Thinner modern border */
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
     cursor: pointer;
-    border-radius: 0;
+    border-radius: 12px; /* Modern rounded corners globally */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow globally */
     
     /* Layout do conteúdo do botão */
     display: flex;
@@ -94,7 +101,7 @@ section {
     justify-content: center;
     text-align: center;
     white-space: nowrap; /* Impede o texto de quebrar linha */
-    font-size: 0.9rem;
+    font-size: 0.95rem; /* Base modern font size */
     font-weight: 600;
     letter-spacing: 1px;
     flex: 1; /* Faz os botões terem o mesmo tamanho */
@@ -103,6 +110,11 @@ section {
 .acBtn a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .acBtn:hover {
@@ -173,16 +185,22 @@ section {
     .btnWrapper {
         flex-direction: column; /* Empilha verticalmente */
         width: 100%;
-        gap: 15px;
+        gap: 15px; /* Use gap to separate flex rows */
     }
     
     .acBtn {
         width: 100%; /* Largura total */
-        padding: 15px; /* Mais fácil de clicar */
+        padding: 12px; /* Reduced padding on mobile so buttons aren't too massive */
+        margin-bottom: 12px; /* Força espaço caso o gap falhe */
+        /* Note: border-radius, box-shadow and border-width are inherited from global now */
+    }
+    .btnWrapper a:last-child .acBtn {
+        margin-bottom: 0px; 
     }
     
     /* Links ocupam 100% da largura para o botão esticar */
     .btnWrapper a {
+        display: block;
         width: 100%;
     }
 }

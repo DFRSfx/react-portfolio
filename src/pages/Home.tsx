@@ -40,31 +40,33 @@ export const Home = () => {
                   />
                 </h1>
                 <p className="mb-1x">{t('home.description')}</p>
-                
+
                 {/* ALTERAÇÃO AQUI: Adicionei styles.btnWrapper */}
                 <div className={`${styles.btnWrapper} pb-5`}>
-                  <button onClick={() => {
+                  <a href="#portfolio" onClick={(e) => {
+                    e.preventDefault();
                     const element = document.getElementById('portfolio');
                     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }} className="text_2" style={{ cursor: 'pointer' }} aria-label="View my portfolio">
-                    <div id="button_p" className={`${styles.acBtn} ${styles.buttonP} btn`}>
+                  }} aria-label="View my portfolio">
+                    <div id="button_p" className={`${styles.acBtn} ${styles.buttonH} btn`}>
                       {t('home.portfolioButton')}
                       <div className={`${styles.ring} ${styles.one}`}></div>
                       <div className={`${styles.ring} ${styles.two}`}></div>
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
-                  </button>
-                  <button onClick={() => {
+                  </a>
+                  <a href="#contact" onClick={(e) => {
+                    e.preventDefault();
                     const element = document.getElementById('contact');
                     if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }} style={{ cursor: 'pointer' }} aria-label="Go to contact section">
+                  }} aria-label="Go to contact section">
                     <div id="button_h" className={`${styles.acBtn} ${styles.buttonH} btn`}>
                       {t('home.contactButton')}
                       <div className={`${styles.ring} ${styles.one}`}></div>
                       <div className={`${styles.ring} ${styles.two}`}></div>
                       <div className={`${styles.ring} ${styles.three}`}></div>
                     </div>
-                  </button>
+                  </a>
                   <a href={CV_PATH} download aria-label="Download my CV">
                     <div className={`${styles.acBtn} ${styles.buttonH} btn`}>
                       {t('home.cvButton', 'Download CV')}

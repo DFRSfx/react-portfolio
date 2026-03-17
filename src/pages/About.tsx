@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import styles from "./About.module.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
@@ -7,14 +6,6 @@ import BallCanvasGrid from "../components/TechBall";
 
 export const About = () => {
   const { t } = useTranslation();
-  const [cols, setCols] = useState(5);
-
-  useEffect(() => {
-    const update = () => setCols(window.innerWidth <= 768 ? 3 : 5);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
   const tools = [
     { name: "React", icon: "/images/icons/react.svg", color: "#1a1a2e" },
@@ -29,7 +20,7 @@ export const About = () => {
     { name: "Laravel", icon: "/images/icons/laravel.svg", color: "#1a1a2e" },
     { name: "Git", icon: "/images/icons/git.svg", color: "#1a1a2e" },
     { name: "AWS", icon: "/images/icons/aws.svg", color: "#1a1a2e" },
-    { name: "Vercel", icon: "/images/icons/vercel.svg", color: "#1a1a2e" },
+    { name: "Vercel", icon: "/images/icons/vercel-dark.svg", lightIcon: "/images/icons/vercel.svg", color: "#1a1a2e" },
     { name: "Pug", icon: "/images/icons/pug.svg", color: "#1a1a2e" },
   ];
 
@@ -57,9 +48,9 @@ export const About = () => {
             </section>
 
             <section className={styles.tools}>
-              <h2 className={styles.sectionTitle} style={{ marginBottom: 0 }}>{t('about.toolsTitle')}</h2>
-              <div style={{ marginTop: "-20px" }}>
-                <BallCanvasGrid tools={tools} cols={cols} />
+              <h2 className={styles.sectionTitle}>{t('about.toolsTitle')}</h2>
+              <div>
+                <BallCanvasGrid tools={tools} />
               </div>
             </section>
           </div>

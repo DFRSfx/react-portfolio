@@ -54,14 +54,14 @@ export const Portfolio: React.FC = () => {
 
   return (
     <HelmetProvider>
-      <Container className="About-header" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Container className="About-header pt-5 mt-4" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{t('portfolio.meta.title')}</title>
           <meta name="description" content={t('portfolio.meta.description')} />
         </Helmet>
 
-        <div className="text-center mb-5">
+        <div className="text-center mb-5 pb-4">
           <p className="text-uppercase tracking-wider mb-2" style={{ color: 'var(--secondary-color)', fontSize: '14px', fontWeight: '600' }}>
             {t('portfolio.subtitle')}
           </p>

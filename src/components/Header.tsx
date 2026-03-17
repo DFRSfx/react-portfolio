@@ -40,7 +40,9 @@ const Header = () => {
             {logotext}
           </a>
           <div className="d-flex align-items-center header-actions">
-            <LanguageSelector />
+            <div className={styles.langWrapper}>
+              <LanguageSelector />
+            </div>
             <ThemeToggle />
             <button
               className={`${styles.menuButton} ${styles.navAc}`}

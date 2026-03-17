@@ -14,27 +14,20 @@
 }
 
 /* Ensure the inner container uses the full width */
-.siteHeader > div {
+.siteHeader > div:first-child {
     width: 100%;
 }
 
 @media (max-width: 767px) {
-    .siteHeader > div {
-        justify-content: center;
+    /* Let the Bootstrap .justify-content-between class handle the horizontal spacing naturally */
+    .siteHeader > div:first-child {
+        position: relative;
     }
+}
 
-    .siteHeader .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1001;
-    }
-
-    .siteHeader .header-actions {
-        position: absolute;
-        right: 20px;
-        z-index: 1001;
-    }
+/* Language selector always visible */
+.langWrapper {
+    display: flex;
 }
 
 .menuButton {

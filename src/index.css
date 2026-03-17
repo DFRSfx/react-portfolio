@@ -1,3 +1,51 @@
+/* ─── Hide native scrollbar ─────────────────────────────────────────────────── */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* ─── Scroll progress indicator ─────────────────────────────────────────────── */
+.scrollProgress {
+  position: fixed;
+  right: clamp(4px, 2vw, 18px); /* Moves closer to edge on mobile to avoid text overlap */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 48;
+  pointer-events: none;
+}
+
+.scrollProgressTrack {
+  position: relative;
+  display: block;
+  width: 6px;
+  height: 92px;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.28);
+  overflow: hidden;
+}
+
+.scrollProgressFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 0;
+  border-radius: 999px;
+  /* Monotone gradient for light/dark theme adaptation */
+  background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 55%, #4b5563 100%);
+  box-shadow:
+    0 0 10px rgba(156, 163, 175, 0.5),
+    0 0 18px rgba(107, 114, 128, 0.3);
+  transition: height 0.14s linear;
+}
+
 :root,
 [data-theme="dark"] {
     --bg-color: #0c0c0c;
@@ -37,6 +85,13 @@ body {
     padding-top: 60px;
     border-left: 10px solid var(--primary-color);
     border-right: 10px solid var(--primary-color);
+}
+
+/* Reserve left space for the fixed SocialIcons sidebar */
+@media only screen and (min-width: 768px) {
+    .s_c {
+        padding-left: 60px;
+    }
 }
 
 ul {
@@ -305,4 +360,51 @@ code {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: none;
+}
+
+/* --- Tech Skills Grid (TechBall.tsx) --- */
+.tech-grid {
+    display: grid;
+    /* Auto-fit columns minimum width 130px on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 16px 8px;
+    width: 100%;
+    padding-top: 16px;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.ball-container {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    touch-action: none;
+}
+
+.tool-name {
+    color: var(--text-color);
+    font-size: clamp(1.08rem, 1.05vw, 1.24rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        /* Garante que colunas tenham no minimo 135px para não encavalar o texto TypeScript / JavaScript */
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+        gap: 16px 8px;
+    }
+    .ball-container {
+        width: 50px;
+        height: 50px;
+    }
+    .tool-name {
+        font-size: 0.95rem; /* Smaller text on mobile */
+    }
 }

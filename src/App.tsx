@@ -6,10 +6,12 @@ import { About } from "./pages/About";
 import { Portfolio } from "./pages/Portfolio";
 import { ContactUs } from "./pages/Contact";
 import { SocialIcons } from "./components/SocialIcons";
+import ScrollProgress from "./components/ScrollProgress";
 
 export default function App() {
   return (
     <Router>
+      <ScrollProgress />
       <Header />
       <div className="s_c">
         <section id="home">
