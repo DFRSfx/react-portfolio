@@ -10,10 +10,12 @@ export const About = () => {
 
   const groupedTools = {
     frontend: [
-      { name: "React", icon: "/images/icons/react.svg", color: "#1a1a2e" },
-      { name: "TypeScript", icon: "/images/icons/typescript.svg", color: "#3178C6" },
-      { name: "JavaScript", icon: "/images/icons/javascript.svg", color: "#F7DF1E" },
-      { name: "Pug", icon: "/images/icons/pug.svg", color: "#A86454" }
+      { name: "React", icon: "/images/icons/react.svg", color: "#20232a" },
+      { name: "TypeScript", icon: "/images/icons/typescript.svg", color: "#007acc" },
+      { name: "JavaScript", icon: "/images/icons/javascript.svg", color: "#f7df1e" },
+      { name: "Tailwind CSS", icon: "/images/icons/tailwind.svg", color: "#1a1a2e" },
+      { name: "Bootstrap", icon: "/images/icons/bootstrap.svg", color: "#7952b3" },
+      { name: "Pug", icon: "/images/icons/pug.svg", color: "#1a1a2e" }
     ],
     backend: [
       { name: "Node.js", icon: "/images/icons/nodejs.svg", color: "#1a1a2e" },
