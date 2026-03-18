@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <>
       <header className={`fixed-top ${styles.siteHeader}`}>
-        <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex align-items-center justify-content-between" style={{ position: 'relative', zIndex: 1060 }}>
           <a className={`navbar-brand ${styles.navAc}`} onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
             {logotext}
           </a>

@@ -65,7 +65,7 @@ export const About = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.5, margin: "2000px 0px 0px 0px" }}
             variants={fadeInUp}
             className={styles.heroQuoteContainer}
           >
@@ -76,7 +76,7 @@ export const About = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.8 }}
+            viewport={{ once: false, amount: 0.5, margin: "2000px 0px 0px 0px" }}
             variants={fadeInUp}
             className={styles.separatorContainer}
           >
@@ -90,7 +90,7 @@ export const About = () => {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3, margin: "2000px 0px 0px 0px" }}
               variants={fadeInUp}
               className={styles.greetingSide}
             >
@@ -101,7 +101,7 @@ export const About = () => {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3, margin: "2000px 0px 0px 0px" }}
               variants={fadeInUp}
               className={styles.descriptionSide}
             >
@@ -122,7 +122,7 @@ export const About = () => {
             className={styles.toolsSection}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: false, amount: 0.1, margin: "2000px 0px 0px 0px" }}
             variants={staggerContainer}
           >
             <h2 className={styles.toolsMainTitle}>{t('about.toolsTitle')}</h2>
