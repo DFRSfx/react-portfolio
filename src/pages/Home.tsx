@@ -18,10 +18,10 @@ export const Home = () => {
         </Helmet>
         <div className={`${styles.introSec} d-block d-lg-flex align-items-center`}>
           <div
-            className={`${styles.hBgImage} order-1 order-lg-2 h-100`}
+            className={`${styles.hBgImage} order-1 order-lg-2`}
             style={{ backgroundImage: `url(https://images.unsplash.com/photo-1498050108023-c5249f4df085)` }}
           ></div>
-          <div className={`${styles.text} order-2 order-lg-1 h-100 d-lg-flex justify-content-center`}>
+          <div className={`${styles.text} order-2 order-lg-1 d-lg-flex justify-content-center`}>
             <div className="align-self-center">
               <div className={`${styles.intro} mx-auto`}>
                 <h2 className="mb-1x">{t('home.greeting')}</h2>

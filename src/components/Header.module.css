@@ -161,26 +161,33 @@
 }
 
 .siteNavigation {
-    height: 100%;
-    left: 0;
-    overflow: hidden;
     position: fixed;
     top: 0;
+    left: 0;
+    bottom: 0;
     width: 100%;
+    height: 100vh !important;
+    z-index: 1050;
+    pointer-events: none;
+    transition: all 0.3s ease;
     visibility: hidden;
-    z-index: 999;
+    opacity: 0;
+    background: var(--bg-color);
 }
 
-.menuOpened {
-    visibility: visible !important;
+.siteNavigation.menuOpened {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .bgMenu {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
     background-color: var(--primary-color);
     will-change: transform;
     transform: translateY(-100%);
