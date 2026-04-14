@@ -1,189 +1,202 @@
-section {
-    flex: 1 0 auto;
+.homeSection {
     position: relative;
     width: 100%;
-    -webkit-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
-    transition: all .5s ease-in;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .introSec {
-    height: 100vh;
-    min-height: 700px;
-    margin-top: -60px; /* Compensa o header fixo */
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* Em mobile, altura automática */
-@media (max-width: 991.98px) {
-    .introSec {
-        display: block;
-        height: auto; /* Remove fixed height for mobile */
-        padding-top: 100px; /* Espaço para o header em mobile */
-    }
+.textContainer {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.introSec .text,
-.introSec .hBgImage {
-    width: 50%;
+.greeting {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg, #ff007f, #6b00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
-@media (max-width: 991.98px) {
-    .introSec .text,
-    .introSec .hBgImage {
-        width: 100%;
-    }
-    .introSec .text {
-        padding: 2rem 1rem; /* Added padding for mobile text */
-    }
+.mainTitle {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    opacity: 0.65;
+    display: inline-block;
 }
 
-.introSec .intro {
-    /* CORREÇÃO AQUI: Aumentei de 450px para 700px para caberem os botões */
-    max-width: 700px; 
-    margin: 0 auto;
+/* Garante que o cursor do Typewriter não fica transparente */
+.mainTitle :global(.Typewriter__cursor) {
+    -webkit-text-fill-color: var(--text-color);
+    color: var(--text-color);
+    font-weight: 400;
+    opacity: 0.65;
 }
 
-@media (max-width: 991.98px) {
-    .introSec .intro {
-        max-width: 100%;
-        padding: 0 20px;
-        text-align: center; /* Centrar texto em mobile fica melhor */
-    }
-    .introSec .text h1 {
-        font-size: 24px; /* Reduce font size on mobile to prevent overflow */
-        word-wrap: break-word;
-        white-space: pre-wrap;
-    }
+.description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.6;
+    font-family: 'Inter', system-ui, sans-serif;
 }
 
-.introSec .text h1 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-.introSec .hBgImage {
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh; /* Ensure it covers viewport but can grow */
-    position: relative;
-    filter: saturate(0.5);
-}
-
-/* Wrapper dos Botões */
 .btnWrapper {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* Força ficar na mesma linha em desktop */
-    gap: 15px;
-    margin-top: 30px;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .btnWrapper a {
     text-decoration: none;
-    display: inline-block;
 }
 
-    /* Estilo Base do Botão */
 .acBtn {
-    padding: 12px 24px; /* Default desktop padding */
-    color: var(--secondary-color);
     position: relative;
-    border: var(--secondary-color) 1px solid; /* Thinner modern border */
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-    cursor: pointer;
-    border-radius: 12px; /* Modern rounded corners globally */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow globally */
-    
-    /* Layout do conteúdo do botão */
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    white-space: nowrap; /* Impede o texto de quebrar linha */
-    font-size: 0.95rem; /* Base modern font size */
+    padding: 14px 32px;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    flex: 1; /* Faz os botões terem o mesmo tamanho */
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    z-index: 1;
+    /* Garante que o texto fica por cima de tudo */
 }
 
-.acBtn a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.btnSolid {
+    color: var(--bg-color);
+    /* Texto invertido face ao fundo da página */
+}
+
+/* Camada 1: O corpo sólido do botão (Preto/Branco consoante o tema) */
+.btnSolid::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--text-color);
+    z-index: -1;
+}
+
+/* Camada 2: A sombra com o gradiente colorida */
+.btnSolid::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
     width: 100%;
     height: 100%;
+    background: linear-gradient(90deg, #e8443a, #c04cdc, #e8873a);
+    z-index: -2;
+    transition: top 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    /* Garante que não interfere com o clique */
 }
 
-/* Portfolio button - solid primary (highlight) */
-.btnSolid { 
-    background: var(--secondary-color); 
-    border-color: var(--secondary-color);
+/* A animação de Hover idêntica ao vídeo */
+.btnSolid:hover::before {
+    top: 0;
+    left: 0;
 }
-[data-theme="light"] .btnSolid { background: #000; color: #fff; border-color: #000; }
-[data-theme="dark"] .btnSolid { background: #fff; color: #000; border-color: #fff; }
 
-/* Contact and Download CV buttons - outline (secondary) */
-.btnOutline { 
-    background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color); 
-}
-[data-theme="light"] .btnOutline { border-color: #000; color: #000; }
-[data-theme="dark"] .btnOutline { border-color: #fff; color: #fff; }
-
-/* Hover states for Solid */
-.btnSolid:hover { opacity: 0.9; transform: translateY(-2px); }
-
-/* Hover states for Outline */
-.btnOutline:hover {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+.btnSolid:hover {
     transform: translateY(-2px);
-}
-[data-theme="light"] .btnOutline:hover { background: #000; color: #fff; border-color: #000; }
-[data-theme="dark"] .btnOutline:hover { background: #fff; color: #000; border-color: #fff; }
-
-@media (max-width: 991.98px) {
-    .introSec {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-
-    .introSec .hBgImage {
-        height: 40vh;
-        min-height: 300px;
-        margin-bottom: 30px;
-    }
+    opacity: 0.8;
 }
 
-/* --- MOBILE LAYOUT --- */
+.btnOutline {
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    background: transparent;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btnOutline:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px color-mix(in srgb, var(--text-color) 20%, transparent);
+}
+
+.cvLink {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    padding: 10px;
+    font-family: 'Inter', system-ui, sans-serif;
+    position: relative;
+}
+
+.cvLink::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.cvLink:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.cvLink:hover {
+    opacity: 0.6;
+}
+
 @media (max-width: 768px) {
     .btnWrapper {
-        flex-direction: column; /* Empilha verticalmente */
+        flex-direction: column;
         width: 100%;
-        gap: 15px; /* Use gap to separate flex rows */
+        gap: 20px;
     }
-    
+
     .acBtn {
-        width: 100%; /* Largura total */
-        padding: 12px; /* Reduced padding on mobile so buttons aren't too massive */
-        margin-bottom: 12px; /* Força espaço caso o gap falhe */
-        /* Note: border-radius, box-shadow and border-width are inherited from global now */
-    }
-    .btnWrapper a:last-child .acBtn {
-        margin-bottom: 0px; 
-    }
-    
-    /* Links ocupam 100% da largura para o botão esticar */
-    .btnWrapper a {
-        display: block;
         width: 100%;
     }
 }

@@ -94,7 +94,7 @@ export const About = () => {
               variants={fadeInUp}
               className={styles.greetingSide}
             >
-              <h1 className={styles.greetingTitle}>{t('about.title', 'Olá, sou o Dário Soares.')}</h1>
+              <h1 className={styles.greetingTitle}>{t('about.title', 'Dário Soares')}</h1>
             </motion.div>
 
             {/* Right: Description & Problem */}

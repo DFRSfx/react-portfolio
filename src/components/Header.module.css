@@ -1,417 +1,217 @@
+/* =========================================
+   1. CORE HEADER & DESKTOP
+   ========================================= */
 .siteHeader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--bg-color, #000); /* Ensure solid background */
+    background-color: color-mix(in srgb, var(--bg-color) 85%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateZ(0); /* Força a GPU para o blur não bugar na troca de tema */
+    transition: background-color 0.4s ease, border-color 0.4s ease; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; /* Add horizontal padding inside the bar */
-    height: 70px; /* Define a fixed height for consistency */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Optional: adds subtle separation */
+    height: 80px;
+    border-bottom: 1px solid color-mix(in srgb, var(--text-color) 5%, transparent);
 }
 
-/* Ensure the inner container uses the full width */
-.siteHeader > div:first-child {
-    width: 100%;
+.headerInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-@media (max-width: 767px) {
-    /* Let the Bootstrap .justify-content-between class handle the horizontal spacing naturally */
-    .siteHeader > div:first-child {
-        position: relative;
-    }
+.navAc {
+    font-size: 1.4rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text-color) !important;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, color 0.4s ease;
 }
 
-/* Desktop Navigation */
+.navAc:hover {
+    opacity: 0.7;
+}
+
+.rightGroup {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.toolsGroup {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .desktopNav {
     display: flex;
     align-items: center;
-    gap: 30px;
-    flex: 1;
-    justify-content: center; /* Center the navigation links */
+    gap: 32px;
 }
 
 .desktopNavLink {
     color: var(--text-color);
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: Marcellus, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Inter', system-ui, sans-serif;
     text-decoration: none;
     cursor: pointer;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
+    text-transform: capitalize;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, transform 0.2s ease, color 0.4s ease;
 }
 
 .desktopNavLink:hover {
-    color: var(--text-color-3, var(--text-color));
-    opacity: 0.8;
+    opacity: 1;
+    transform: translateY(-1px);
 }
 
-.desktopNavLink::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--text-color);
-    transition: width 0.3s ease;
-}
-
-.desktopNavLink:hover::after {
-    width: 100%;
-}
-
-/* Language selector always visible */
-.langWrapper {
-    display: flex;
-}
-
+/* =========================================
+   2. MOBILE TOGGLE & RESPONSIVITY
+   ========================================= */
 .menuButton {
     color: var(--text-color);
-    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    min-width: 50px;
-}
-
-.menuButton:focus,
-.menuButton:hover {
-    color: var(--text-color);
-    box-shadow: unset;
-    opacity: 0.8;
+    cursor: pointer;
+    transition: color 0.4s ease;
 }
 
 .menuButton svg {
-    width: 2em;
-    height: 2em;
-    fill: var(--text-color-2);
-    color: var(--text-color-2);
-    pointer-events: none;
+    width: 28px;
+    height: 28px;
 }
 
 @media (max-width: 767px) {
-    .menuButton svg {
-        width: 2.5em;
-        height: 2.5em;
+    .siteHeader {
+        height: 70px;
+    }
+    .headerInner {
+        padding: 0 20px;
     }
 }
 
-.navAc {
-    padding: 5px 15px;
-    margin: 0;
-    border: unset;
-    background: var(--primary-color);
-    font-size: 1.25rem;
-    font-family: Marcellus;
-    color: var(--text-color-2);
-    line-height: 2;
-    height: 50px;
-    font-weight: bold;
-    z-index: 1000;
-}
-
-.navAc:hover {
-    color: var(--text-color-2);
-}
-
-.brTop,
-.brBottom,
-.brRight,
-.brLeft {
-    position: fixed;
-    z-index: 999999;
-    background: var(--primary-color);
-}
-
-.brTop {
-    top: 0;
-    height: 10px;
-    left: 0;
-    width: 100%;
-}
-
-.brBottom {
-    bottom: 0;
-    left: 0;
-    height: 10px;
-    width: 100%;
-}
-
-.brRight {
-    width: 10px;
-    right: 0;
-    top: 0;
-    height: 100%;
-}
-
-.brLeft {
-    width: 10px;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
-
+/* =========================================
+   3. MOBILE MENU (FULLSCREEN OVL)
+   ========================================= */
 .siteNavigation {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
     width: 100%;
-    height: 100vh !important;
-    z-index: 1050;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    visibility: hidden;
+    height: 100vh;
+    z-index: 999; /* Abaixo do header principal para o botão fechar funcionar */
     opacity: 0;
-    background: var(--bg-color);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .siteNavigation.menuOpened {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
 
 .bgMenu {
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: var(--bg-color);
     width: 100%;
     height: 100%;
+    /* O header mobile tem 70px. Não faz sentido o padding ser 80px. */
+    padding-top: 10px; 
     overflow-y: auto;
-    background-color: var(--primary-color);
-    will-change: transform;
-    transform: translateY(-100%);
-    transition: .5s ease all;
-}
-
-.menuOpened .bgMenu {
-    transform: translateY(0);
-}
-
-.menuWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden auto;
 }
 
 .menuContainer {
-    padding-bottom: 240px;
-}
-
-@media (max-width: 991px) {
-    .menuContainer {
-        margin-left: 0;
-    }
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .theMenu {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-    padding-left: 0;
-    text-align: center;
-}
-
-@media (max-width: 767px) {
-    .theMenu {
-        padding-top: 15vh;
-        padding-bottom: 15vh;
-    }
-
-    .menuContainer {
-        padding-bottom: 300px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .theMenu {
-        padding-top: 12vh;
-        padding-bottom: 12vh;
-    }
-}
-
-@media (min-width: 992px) {
-    .menuContainer {
-        margin-left: 33.3333%;
-    }
-    .theMenu {
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-        text-align: left;
-    }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .theMenu .menuItem > a {
-    color: var(--text-color-2);
-    line-height: 1.5;
+    color: var(--text-color);
     font-size: 2.5rem;
+    font-weight: 800;
     display: block;
-    position: relative;
-    transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
-    padding: 8px 0px;
     text-decoration: none;
-    font-family: Marcellus;
+    font-family: 'Inter', system-ui, sans-serif;
     cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    letter-spacing: -1px;
 }
 
 .theMenu .menuItem > a:hover {
-    color: var(--text-color-3);
-}
-
-@media (max-width: 576px) {
-    .theMenu .menuItem > a {
-        font-size: 2.2rem;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 767px) {
-    .theMenu .menuItem > a {
-        font-size: 3rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .theMenu .menuItem > a {
-        font-size: 8.0vw;
-        display: inline-block;
-    }
-}
-
-@media (min-width: 1024px) {
-    .theMenu .menuItem > a {
-        font-size: 4.8vw;
-        display: inline-block;
-    }
+    opacity: 0.7;
+    transform: translateX(10px);
 }
 
 .menuFooter {
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    font-family: Marcellus;
-    font-size: 14px;
-    background: var(--primary-color);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.menuFooter a {
-    color: var(--text-color-2);
-    margin-right: 10px;
-    text-decoration: none;
-    transition: color 250ms cubic-bezier(0, 0, 0.58, 1) 0s;
-}
-
-.menuFooter a:hover {
-    color: var(--text-color-3);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    background: var(--bg-color);
+    border-top: 1px solid color-mix(in srgb, var(--text-color) 10%, transparent);
 }
 
 .socialSection {
     gap: 20px;
-    align-items: center;
 }
 
 .followText {
-    font-size: 0.9rem;
-    font-family: Marcellus;
-    color: var(--text-color-2);
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.socialLink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-color-2);
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.socialLink:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--text-color-3);
-    transform: translateY(-2px);
+    letter-spacing: 1px;
+    color: var(--text-color);
+    opacity: 0.6;
 }
 
 .socialLinkItem {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: var(--text-color-2);
+    gap: 8px;
+    color: var(--text-color);
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    font-family: Marcellus;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.socialLinkItem:hover {
+    opacity: 0.7;
 }
 
 .socialLinkItem svg {
     width: 20px;
     height: 20px;
-    flex-shrink: 0;
 }
 
-.socialLinkItem:hover {
-    color: var(--text-color-3);
-    gap: 12px;
-}
-
-@media (max-width: 576px) {
-    .socialSection {
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .followText {
-        font-size: 0.8rem;
-        flex: 0 0 100%;
-        margin-bottom: 8px;
-    }
-
-    .socialLink {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
-
-    .socialLinkItem {
-        font-size: 0.85rem;
-        gap: 6px;
-    }
-
-    .socialLinkItem svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    .menuFooter {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-
-    .menuFooter p {
-        width: 100%;
-        text-align: left;
-        font-size: 0.85rem;
-        margin: 0;
-    }
+.mobileTools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    /* Destrói o padding extra do 'p-4' do Bootstrap puxando o bloco para cima */
+    margin-top: -20px; 
+    /* Empurra a lista de links para baixo para o layout respirar */
+    margin-bottom: 40px; 
+    transform-origin: right center;
 }

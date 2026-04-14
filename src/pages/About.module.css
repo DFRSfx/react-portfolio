@@ -6,6 +6,12 @@
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Layout Wrapper */

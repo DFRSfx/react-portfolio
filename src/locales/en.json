@@ -1,7 +1,16 @@
 {
+  "routes": {
+    "home": "/",
+    "about": "/about",
+    "portfolio": "/projects",
+    "experience": "/experience",
+    "contact": "/contact",
+    "workDetails": "/projects/:id"
+  },
   "header": {
     "home": "Home",
-    "portfolio": "Portfolio",
+    "portfolio": "Projects",
+    "experience": "Experience",
     "about": "About",
     "contact": "Contact"
   },
@@ -9,10 +18,11 @@
     "followText": "Follow me"
   },
   "home": {
-    "greeting": "Hello, I'm Dário Soares",
-    "title1": "Full Stack Developer",
-    "title2": "React & TypeScript",
-    "title3": "Modern Web Development",
+    "greeting": "Dário Soares",
+    "title1": "Generating Lasting Online Web Experiences",
+    "title2": "Giving Life to Outstanding Webpages",
+    "title3": "Building Remarkable Experiences on the Web",
+    "title4": "Working Across Various Environments",
     "description": "Developer passionate about creating amazing and functional web experiences using the most modern technologies on the market.",
     "portfolioButton": "My Portfolio",
     "contactButton": "Contact",
@@ -93,12 +103,12 @@
   },
   "portfolio": {
     "subtitle": "Recent Work",
-    "pageTitle": "Portfolio",
+    "pageTitle": "Projects",
     "description": "These projects demonstrate my experience with practical examples of my work. Each project includes a brief description and links to code repositories and live demos.",
     "viewCode": "View code",
     "viewDemo": "View demo",
     "meta": {
-      "title": "Portfolio | Dário Soares",
+      "title": "Projects | Dário Soares",
       "description": "Projects and works developed by Dário Soares - Full Stack Developer"
     },
     "projects": {
@@ -117,6 +127,38 @@
       "project4": {
         "title": "Oxlyn Software",
         "description": "Development studio specialized in scripts and resources for FiveM servers. Our products empower server owners to build unique roleplay experiences, featuring custom job systems, economies, inventories, and mechanics tailored to their communities"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey so far.",
+    "current": "Current",
+    "meta": {
+      "title": "Experience | Dário Soares",
+      "description": "Professional experience of Dário Soares - Full Stack Developer"
+    },
+    "items": {
+      "item1": {
+        "role": "Full Stack Developer",
+        "company": "Freelancer",
+        "location": "Porto, Portugal",
+        "date": "2023 - Present",
+        "description": "Developing full stack web applications for clients, from concept to deployment. Building responsive interfaces with React and TypeScript, RESTful APIs with Node.js, and database integrations. Delivering scalable and maintainable solutions tailored to each client's needs."
+      },
+      "item2": {
+        "role": "Frontend Developer",
+        "company": "Personal Projects",
+        "location": "Porto, Portugal",
+        "date": "2022 - 2023",
+        "description": "Built and shipped multiple personal web projects to sharpen frontend skills. Focused on React component architecture, CSS animations, and responsive design. Explored modern tooling including Vite, TypeScript and design systems."
+      },
+      "item3": {
+        "role": "Web Developer",
+        "company": "Studies & Training",
+        "location": "Porto, Portugal",
+        "date": "2021 - 2022",
+        "description": "Laid the foundation in web development through structured study and hands-on training. Covered HTML, CSS, JavaScript, PHP and introductory backend concepts. Completed projects that bridged academic learning with real-world application."
       }
     }
   }

@@ -159,12 +159,11 @@ code {
 .theme-toggle {
     padding: 5px 15px;
     margin: 0;
-    margin-right: -2px;
     border: unset;
-    background: var(--primary-color);
+    background: transparent;
     font-size: 1.25rem;
     font-family: Marcellus;
-    color: var(--text-color-2);
+    color: var(--text-color);
     line-height: 2;
     height: 50px;
     font-weight: bold;
@@ -173,19 +172,19 @@ code {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.theme-toggle svg {
-    width: 2em;
-    height: 2em;
-    color: var(--text-color-2);
     transition: opacity 0.3s ease;
+    border-radius: 8px;
 }
 
 .theme-toggle:hover {
-    opacity: 0.8;
+    background: rgba(128, 128, 128, 0.15);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-color);
+    transition: opacity 0.3s ease;
 }
 
 /* Language Selector */
@@ -196,33 +195,30 @@ code {
 }
 
 .language-button {
-    padding: 5px 20px;
+    padding: 5px 12px;
     margin: 0;
-    margin-right: -2px;
     border: unset;
-    background: var(--primary-color);
+    background: transparent;
     font-size: 1rem;
     font-family: Marcellus;
-    color: var(--text-color-2);
+    color: var(--text-color);
     line-height: 2;
     height: 50px;
-    min-height: 50px;
-    max-height: 50px;
-    min-width: 140px;
+    min-width: unset;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease;
     box-sizing: border-box;
     position: relative;
+    border-radius: 8px;
 }
 
 .language-button:hover {
-    opacity: 0.8;
+    background: rgba(128, 128, 128, 0.15);
 }
 
 .language-button * {
@@ -243,9 +239,12 @@ code {
     position: absolute;
     top: 100%;
     right: 0;
-    background: var(--primary-color);
-    border: none;
-    min-width: 220px;
+    background: color-mix(in srgb, var(--bg-color) 88%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in srgb, var(--text-color) 10%, transparent);
+    border-radius: 10px;
+    min-width: 180px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
                 0 2px 8px rgba(0, 0, 0, 0.2);
     z-index: 10000;

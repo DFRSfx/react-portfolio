@@ -1,7 +1,16 @@
 {
+  "routes": {
+    "home": "/",
+    "about": "/sobre",
+    "portfolio": "/projetos",
+    "experience": "/experiencia",
+    "contact": "/contacto",
+    "workDetails": "/projetos/:id"
+  },
   "header": {
     "home": "Início",
-    "portfolio": "Portfólio",
+    "portfolio": "Projetos",
+    "experience": "Experiência",
     "about": "Sobre",
     "contact": "Contacto"
   },
@@ -9,10 +18,11 @@
     "followText": "Segue-me"
   },
   "home": {
-    "greeting": "Olá, sou o Dário Soares",
-    "title1": "Full Stack Developer",
-    "title2": "React & TypeScript",
-    "title3": "Desenvolvimento Web Moderno",
+    "greeting": "Dário Soares",
+    "title1": "Generating Lasting Online Web Experiences",
+    "title2": "Giving Life to Outstanding Webpages",
+    "title3": "Building Remarkable Experiences on the Web",
+    "title4": "Working Across Various Environments",
     "description": "Desenvolvedor apaixonado por criar experiências web incríveis e funcionais usando as tecnologias mais modernas do mercado.",
     "portfolioButton": "Meu Portfólio",
     "contactButton": "Contacto",
@@ -24,7 +34,7 @@
   "about": {
     "pageTitle": "Sobre mim",
     "sectionTitle": "Um pouco sobre mim",
-    "title": "Olá, o meu nome é Dário Soares.",
+    "title": "Dário Soares.",
     "role": "A minha missão é construir soluções web focadas na performance e usabilidade, assegurando em cada linha de código um produto dinâmico e impactante.",
     "description": "Sou um Full Stack Developer movido pela vontade de transformar desafios complexos em aplicações digitais simples, rápidas e escaláveis. A minha paixão por tecnologia estende-se desde a conceção visual das interfaces até à arquitetura robusta no backend. Dedico-me a estruturar código modular, limpo e seguro, equilibrando sempre o melhor design com engenharia sólida. O meu foco principal é garantir que as empresas encontram nas minhas soluções a ponte perfeita para o seu crescimento tecnológico.",
     "problemTitle": "O Que Eu Resolvo",
@@ -87,18 +97,18 @@
     "cvDescription": "Visão completa da minha experiência, educação e competências técnicas.",
     "cvAction": "Descarregar PDF",
     "meta": {
-      "title": "Portfólio | Dário Soares",
+      "title": "Contacto | Dário Soares",
       "description": "Entre em contacto com Dário Soares para projetos e colaborações"
     }
   },
   "portfolio": {
     "subtitle": "Trabalhos Recentes",
-    "pageTitle": "Portfólio",
+    "pageTitle": "Projetos",
     "description": "Estes projetos demonstram a minha experiência com exemplos práticos do meu trabalho. Cada projeto inclui uma breve descrição e links para repositórios de código e demos ao vivo.",
     "viewCode": "Ver código",
     "viewDemo": "Ver demo",
     "meta": {
-      "title": "Portfólio | Dário Soares",
+      "title": "Projetos | Dário Soares",
       "description": "Projetos e trabalhos desenvolvidos por Dário Soares - Full Stack Developer"
     },
     "projects": {
@@ -117,6 +127,38 @@
       "project4": {
         "title": "Oxlyn Software",
         "description": "Studio de desenvolvimento especializado em scripts e resources para servidores FiveM. Com os nossos resources, qualquer servidor passa de base a uma experiência única e imersiva para a sua comunidade."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "subtitle": "O meu percurso profissional até agora.",
+    "current": "Atual",
+    "meta": {
+      "title": "Experiência | Dário Soares",
+      "description": "Experiência profissional de Dário Soares - Full Stack Developer"
+    },
+    "items": {
+      "item1": {
+        "role": "Full Stack Developer",
+        "company": "Freelancer",
+        "location": "Porto, Portugal",
+        "date": "2023 - Presente",
+        "description": "Desenvolvimento de aplicações web full stack para clientes, do conceito ao deployment. Criação de interfaces responsivas com React e TypeScript, APIs RESTful com Node.js e integrações com bases de dados. Entrega de soluções escaláveis e maintainable adaptadas às necessidades de cada cliente."
+      },
+      "item2": {
+        "role": "Frontend Developer",
+        "company": "Projetos Pessoais",
+        "location": "Porto, Portugal",
+        "date": "2022 - 2023",
+        "description": "Construção e publicação de vários projetos web pessoais para aperfeiçoar competências de frontend. Foco em arquitetura de componentes React, animações CSS e design responsivo. Exploração de ferramentas modernas como Vite, TypeScript e sistemas de design."
+      },
+      "item3": {
+        "role": "Web Developer",
+        "company": "Estudos & Formação",
+        "location": "Porto, Portugal",
+        "date": "2021 - 2022",
+        "description": "Construção da base em desenvolvimento web através de estudo estruturado e formação prática. Abordagem de HTML, CSS, JavaScript, PHP e conceitos introdutórios de backend. Conclusão de projetos que ligaram a aprendizagem académica à aplicação real."
       }
     }
   }
