@@ -140,26 +140,32 @@
     },
     "items": {
       "item1": {
-        "role": "Full Stack Developer",
-        "company": "Freelancer",
-        "location": "Porto, Portugal",
-        "date": "2023 - Presente",
-        "description": "Desenvolvimento de aplicações web full stack para clientes, do conceito ao deployment. Criação de interfaces responsivas com React e TypeScript, APIs RESTful com Node.js e integrações com bases de dados. Entrega de soluções escaláveis e maintainable adaptadas às necessidades de cada cliente."
+        "role": "Estagiário FullStack Developer",
+        "company": "ISLA - Instituto Politécnico de Gestão e Tecnologia",
+        "location": "Vila Nova de Gaia, Porto, Portugal · No local",
+        "date": "mar de 2026 - o momento · 2 meses",
+        "description": "Realizei uma auditoria completa à interface de um sistema existente de gestão de recursos académicos desenvolvido em Laravel 10. Reconstruí todo o frontend de raiz utilizando Blade, Tailwind CSS e Alpine.js, entregando uma UI limpa e consistente. Refatorei ~70% da lógica de backend, incluindo controllers, models e routing, para melhorar a qualidade do código, manutenibilidade e adesão aos princípios MVC."
       },
       "item2": {
-        "role": "Frontend Developer",
-        "company": "Projetos Pessoais",
-        "location": "Porto, Portugal",
-        "date": "2022 - 2023",
-        "description": "Construção e publicação de vários projetos web pessoais para aperfeiçoar competências de frontend. Foco em arquitetura de componentes React, animações CSS e design responsivo. Exploração de ferramentas modernas como Vite, TypeScript e sistemas de design."
+        "role": "Estagiário de Suporte Técnico & Web",
+        "company": "Miguel E Alex Telemóveis E Comunicações",
+        "location": "Santa Maria da Feira, Aveiro, Portugal · No local",
+        "date": "jan de 2023 - mai de 2023 · 5 meses",
+        "description": "Prestei suporte técnico a clientes e realizei reparações básicas de dispositivos móveis num ambiente de retalho. Desenvolvi um website protótipo para a loja em PHP, adquirindo experiência prática em desenvolvimento web backend."
       },
       "item3": {
-        "role": "Web Developer",
-        "company": "Estudos & Formação",
-        "location": "Porto, Portugal",
-        "date": "2021 - 2022",
-        "description": "Construção da base em desenvolvimento web através de estudo estruturado e formação prática. Abordagem de HTML, CSS, JavaScript, PHP e conceitos introdutórios de backend. Conclusão de projetos que ligaram a aprendizagem académica à aplicação real."
+        "role": "Estagiário de Suporte Técnico & Web",
+        "company": "Clínica do PC",
+        "location": "Vila Nova de Gaia, Porto, Portugal · No local",
+        "date": "abr de 2022 - jul de 2022 · 4 meses",
+        "description": "Construí e personalizei o website da loja utilizando Weasy.io, estendendo templates padrão com blocos HTML/CSS personalizados para corresponder à identidade da marca. Diagnostiquei e resolvi problemas de hardware e software em computadores de clientes, gerindo reparações de ponta a ponta."
       }
     }
+  },
+  "workDetails": {
+    "backToPortfolio": "Voltar ao Portfólio",
+    "aboutProject": "Sobre o Projeto",
+    "technologies": "Technologies",
+    "links": "Links"
   }
 }

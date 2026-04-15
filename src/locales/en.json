@@ -140,26 +140,32 @@
     },
     "items": {
       "item1": {
-        "role": "Full Stack Developer",
-        "company": "Freelancer",
-        "location": "Porto, Portugal",
-        "date": "2023 - Present",
-        "description": "Developing full stack web applications for clients, from concept to deployment. Building responsive interfaces with React and TypeScript, RESTful APIs with Node.js, and database integrations. Delivering scalable and maintainable solutions tailored to each client's needs."
+        "role": "FullStack Developer Intern",
+        "company": "ISLA - Instituto Politécnico de Gestão e Tecnologia",
+        "location": "Vila Nova de Gaia, Porto, Portugal · On-site",
+        "date": "Mar 2026 - Present · 2 months",
+        "description": "Conducted a full interface audit of an existing academic resource management system built with Laravel 10. Rebuilt the entire frontend from scratch using Blade, Tailwind CSS, and Alpine.js, delivering a clean and consistent UI. Refactored ~70% of the backend logic, including controllers, models, and routing to improve code quality, maintainability, and adherence to MVC principles."
       },
       "item2": {
-        "role": "Frontend Developer",
-        "company": "Personal Projects",
-        "location": "Porto, Portugal",
-        "date": "2022 - 2023",
-        "description": "Built and shipped multiple personal web projects to sharpen frontend skills. Focused on React component architecture, CSS animations, and responsive design. Explored modern tooling including Vite, TypeScript and design systems."
+        "role": "Technical Support & Web Intern",
+        "company": "Miguel E Alex Telemóveis E Comunicações",
+        "location": "Santa Maria da Feira, Aveiro, Portugal · On-site",
+        "date": "Jan 2023 - May 2023 · 5 months",
+        "description": "Provided customer-facing technical support and performed basic mobile device repairs in a retail environment. Developed a prototype website for the store in PHP, gaining hands-on experience in backend web development."
       },
       "item3": {
-        "role": "Web Developer",
-        "company": "Studies & Training",
-        "location": "Porto, Portugal",
-        "date": "2021 - 2022",
-        "description": "Laid the foundation in web development through structured study and hands-on training. Covered HTML, CSS, JavaScript, PHP and introductory backend concepts. Completed projects that bridged academic learning with real-world application."
+        "role": "Technical Support & Web Intern",
+        "company": "Clínica do PC",
+        "location": "Vila Nova de Gaia, Porto, Portugal · On-site",
+        "date": "Apr 2022 - Jul 2022 · 4 months",
+        "description": "Built and customized the store's website using Weasy.io, extending default templates with custom HTML/CSS blocks to match the brand identity. Diagnosed and resolved hardware and software issues on client computers, managing repairs end-to-end."
       }
     }
+  },
+  "workDetails": {
+    "backToPortfolio": "Back to Portfolio",
+    "aboutProject": "About Project",
+    "technologies": "Technologies",
+    "links": "Links"
   }
 }

@@ -57,6 +57,7 @@ body::-webkit-scrollbar {
     --text-color-2: #fff;
     --text-color-3: rgb(204, 0, 0);
     --overlay-color: rgb(12 12 12 / 63%);
+    --badge-text-color: #000;
 }
 
 [data-theme="light"] {
@@ -67,6 +68,7 @@ body::-webkit-scrollbar {
     --text-color-2: #000;
     --text-color-3: rgb(204, 0, 0);
     --overlay-color: rgb(255 255 255 / 70%);
+    --badge-text-color: #fff;
 }
 
 html,
@@ -176,15 +178,35 @@ code {
     border-radius: 8px;
 }
 
-.theme-toggle:hover {
-    background: rgba(128, 128, 128, 0.15);
-}
 
 .theme-toggle svg {
     width: 20px;
     height: 20px;
     color: var(--text-color);
-    transition: opacity 0.3s ease;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+    transform: scale(1.15);
+}
+
+.theme-toggle--loading {
+    cursor: not-allowed;
+}
+
+.theme-toggle__spinner {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top-color: var(--text-color);
+    border-right-color: var(--text-color);
+    border-radius: 50%;
+    animation: theme-spin 0.6s linear infinite;
+}
+
+@keyframes theme-spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Language Selector */

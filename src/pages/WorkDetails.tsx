@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
 import { usePortfolioData } from "../hooks/usePortfolioData";
+import { useTheme } from "../context/ThemeContext";
+import { TECH_ICONS, getTechIconUrl } from "../utils/techIcons";
 import styles from "./Portfolio.module.css";
 
 // Extract SVGs to keep your main component clean (or use react-icons)
@@ -28,6 +30,7 @@ export const WorkDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const dataportfolio = usePortfolioData();
+  const { theme } = useTheme();
 
   const project = dataportfolio.find((p) => p.id === id);
 
@@ -60,7 +63,13 @@ export const WorkDetails = () => {
           <h1 className={styles.detailsTitle}>{project.title}</h1>
 
           <div className={styles.imageWrapper}>
-            <img src={project.img} alt={`Preview of ${project.title}`} className={styles.detailsImage} />
+            <img
+              src={project.img}
+              alt={`Preview of ${project.title}`}
+              className={styles.detailsImage}
+              decoding="async"
+              loading="eager"
+            />
           </div>
 
           <div className={styles.detailsGrid}>
@@ -74,11 +83,24 @@ export const WorkDetails = () => {
             <aside className={styles.sidebar}>
               <h4 className={styles.sidebarTitle}>{t("workDetails.technologies")}</h4>
               <div className={styles.techStackDetails}>
-                {project.technologies.map((tech, idx) => (
-                  <span key={idx} className={styles.techBadge}>
-                    {tech}
-                  </span>
-                ))}
+                {project.technologies.map((tech, idx) => {
+                  const icon = TECH_ICONS[tech];
+                  return (
+                    <span key={idx} className={styles.techBadge}>
+                      {icon && (
+                        <img
+                          src={getTechIconUrl(icon, theme)}
+                          alt=""
+                          aria-hidden="true"
+                          width={16}
+                          height={16}
+                          className={styles.techBadgeIcon}
+                        />
+                      )}
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
 
               <h4 className={styles.sidebarTitle}>{t("workDetails.links")}</h4>

@@ -7,6 +7,7 @@
   max-width: 1200px;
   margin: 0 auto 50px auto;
   padding: 0 10px;
+  contain: layout;
 }
 
 /* Painel individual (Cartão) */
@@ -18,9 +19,11 @@
   color: #fff;
   position: relative;
   overflow: hidden;
-  height: 400px; /* Altura padrão fixa e decente para cartões de grelha */
+  height: 400px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .projectCard:hover {
@@ -36,11 +39,20 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.2) 100%);
-  transition: background 0.4s ease;
 }
 
-.projectCard:hover .cardOverlay {
+/* Use a second pseudo-overlay for the hover state so we animate opacity (cheap) not background (expensive) */
+.cardOverlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.projectCard:hover .cardOverlay::after {
+  opacity: 1;
 }
 
 /* Conteúdo Completo SEMPRE vísivel e legível */
@@ -90,6 +102,29 @@
   font-size: 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-weight: 600;
+}
+
+.techIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.techIcon:hover {
+  transform: scale(1.2);
+}
+
+/* CoreUI SVGs are dark by default — invert on dark theme so they appear white */
+[data-theme="dark"] .techIconCoreui {
+  filter: invert(1);
+}
+
+/* Stripe SVG is dark and needs a white bg on light mode to be visible over the card's dark overlay */
+[data-theme="light"] .techIconStripe {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 2px;
 }
 
 /* Botões / Links */
@@ -152,6 +187,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  contain: layout;
 }
 
 .backLink {
@@ -162,6 +198,20 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.backLink:hover {
+  transform: scale(1.1);
+}
+
+.backLink:hover svg {
+  transform: translateX(-4px);
+  transition: transform 0.2s ease;
+}
+
+.backLink svg {
+  transition: transform 0.2s ease;
 }
 
 .detailsTitle {
@@ -179,18 +229,22 @@
   overflow: hidden;
   margin-bottom: 2rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .detailsImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: auto;
 }
 
 .detailsGrid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 40px;
+  contain: layout;
 }
 
 .sectionTitle {
@@ -229,11 +283,20 @@
 
 .techBadge {
   background: var(--secondary-color);
-  color: #fff;
+  color: var(--badge-text-color);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.techBadgeIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* Responsiveness for details page */
